@@ -3,38 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oral 3 — Instances du collège / lycée</title>
+  <title>Oral 3 — Schéma des instances</title>
   <style>
     :root {
       --bg-1: #fff9fc;
-      --bg-2: #f7f8ff;
+      --bg-2: #f6f8ff;
       --bg-3: #f4fff8;
 
-      --text: #273248;
-      --muted: #677389;
-      --line: #dfe4ec;
-      --line-strong: #cfd6e2;
-      --card: rgba(255, 255, 255, 0.92);
-      --shadow: 0 14px 34px rgba(130, 140, 170, 0.12);
+      --text: #243248;
+      --muted: #67748c;
+      --line: #d9dfeb;
+      --line-strong: #c7cfdd;
+      --card: rgba(255, 255, 255, 0.94);
+      --panel: rgba(255, 255, 255, 0.78);
+      --shadow: 0 16px 36px rgba(125, 136, 170, 0.12);
 
-      --blue-1: #eaf4ff;
-      --blue-2: #cfe7ff;
-      --blue-3: #5e8fc3;
+      --decision-1: #edf5ff;
+      --decision-2: #d3e7ff;
+      --decision-3: #5f8fc4;
 
-      --green-1: #eefaf1;
-      --green-2: #d4efdb;
-      --green-3: #5f9e73;
+      --pedago-1: #eefaf1;
+      --pedago-2: #d5efdc;
+      --pedago-3: #5f9e74;
 
-      --peach-1: #fff5ed;
-      --peach-2: #ffe0cb;
-      --peach-3: #d58c5b;
+      --vie-1: #fff5ee;
+      --vie-2: #ffe1cb;
+      --vie-3: #d78b5d;
 
-      --violet-1: #f8f1ff;
-      --violet-2: #e4d2ff;
-      --violet-3: #8666c7;
+      --sante-1: #f8f1ff;
+      --sante-2: #e4d1ff;
+      --sante-3: #8968cb;
 
-      --radius-xl: 28px;
-      --radius-lg: 22px;
+      --danger-1: #fff1f5;
+      --danger-2: #ffd8e1;
+      --danger-3: #d66f90;
+
+      --neutral-1: #f4f7fb;
+      --neutral-2: #e1e8f1;
+      --neutral-3: #78879f;
+
+      --radius-xl: 30px;
+      --radius-lg: 24px;
       --radius-md: 18px;
       --radius-sm: 14px;
     }
@@ -52,126 +61,325 @@
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 12%, rgba(255, 209, 227, 0.35), transparent 20%),
-        radial-gradient(circle at 90% 12%, rgba(217, 203, 255, 0.32), transparent 20%),
-        radial-gradient(circle at 18% 82%, rgba(207, 239, 219, 0.28), transparent 22%),
-        radial-gradient(circle at 85% 78%, rgba(207, 231, 255, 0.28), transparent 24%),
-        linear-gradient(180deg, var(--bg-1), var(--bg-2) 50%, var(--bg-3));
+        radial-gradient(circle at 8% 10%, rgba(255, 212, 228, 0.34), transparent 20%),
+        radial-gradient(circle at 92% 10%, rgba(221, 207, 255, 0.30), transparent 21%),
+        radial-gradient(circle at 16% 84%, rgba(213, 239, 221, 0.28), transparent 22%),
+        radial-gradient(circle at 88% 80%, rgba(211, 231, 255, 0.28), transparent 22%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2) 52%, var(--bg-3));
       min-height: 100vh;
     }
 
     .page {
-      width: min(1100px, calc(100% - 24px));
+      width: min(1120px, calc(100% - 24px));
       margin: 0 auto;
-      padding: 20px 0 42px;
+      padding: 20px 0 44px;
     }
 
-    .topbar {
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(255,255,255,0.88);
-      border-radius: 30px;
+    .hero,
+    .panel,
+    .section,
+    .footer {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.9);
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      border-radius: var(--radius-xl);
       padding: 22px 20px;
       margin-bottom: 16px;
     }
 
-    .tiny-pills {
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 14px;
     }
 
-    .tiny-pill {
+    .hero-pill {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.88);
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--text);
     }
 
     h1 {
       margin: 0 0 8px;
-      font-size: clamp(1.9rem, 4.5vw, 3rem);
-      line-height: 1.04;
+      font-size: clamp(2rem, 4.8vw, 3.2rem);
+      line-height: 1.03;
       letter-spacing: -0.04em;
     }
 
-    .subtitle {
+    .hero p {
       margin: 0;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 760px;
+      max-width: 820px;
     }
 
-    .categories {
+    .panel {
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .search,
+    .btn {
+      min-height: 52px;
+      border-radius: 18px;
+      border: 1.5px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      font: inherit;
+      color: var(--text);
+    }
+
+    .search {
+      width: 100%;
+      padding: 0 16px;
+      outline: none;
+    }
+
+    .search:focus {
+      border-color: #b6c3d8;
+      box-shadow: 0 0 0 4px rgba(192, 205, 226, 0.22);
+    }
+
+    .btn {
+      padding: 0 16px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(130, 140, 170, 0.06);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .map-title {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .map-title h2 {
+      margin: 0 0 6px;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+    }
+
+    .map-title p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .root-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .root-node {
+      min-width: 290px;
+      max-width: 430px;
+      text-align: center;
+      padding: 16px 18px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 248, 255, 0.95));
+      border: 1.5px solid var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .root-node .emoji {
+      font-size: 1.9rem;
+      margin-bottom: 6px;
+    }
+
+    .root-node strong {
+      display: block;
+      font-size: 1.12rem;
+      margin-bottom: 4px;
+    }
+
+    .root-node span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .trunk {
+      width: 2px;
+      height: 28px;
+      margin: 0 auto;
+      background: var(--line-strong);
+      border-radius: 999px;
+    }
+
+    .branch-line {
+      height: 2px;
+      background: var(--line-strong);
+      border-radius: 999px;
+      width: calc(100% - 120px);
+      margin: 0 auto 18px;
+    }
+
+    .category-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+      gap: 14px;
+      align-items: start;
     }
 
-    .cat-link {
+    .category-col {
+      position: relative;
+      padding-top: 24px;
+    }
+
+    .category-col::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 24px;
+      background: var(--line-strong);
+      border-radius: 999px;
+    }
+
+    .category-node {
       display: block;
       text-decoration: none;
       color: var(--text);
+      padding: 16px 14px 14px;
       border-radius: 24px;
-      padding: 16px 16px 14px;
-      border: 1.5px solid var(--line);
-      box-shadow: var(--shadow);
-      transition: transform 0.16s ease, box-shadow 0.16s ease;
+      border: 1.5px solid var(--line-strong);
+      box-shadow: 0 12px 26px rgba(130, 140, 170, 0.08);
+      margin-bottom: 12px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .cat-link:hover {
+    .category-node:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 28px rgba(130, 140, 170, 0.14);
+      box-shadow: 0 16px 28px rgba(130, 140, 170, 0.12);
     }
 
-    .cat-link strong {
+    .cat-emoji {
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+    }
+
+    .category-node strong {
       display: block;
-      margin-top: 8px;
       margin-bottom: 4px;
       font-size: 1.02rem;
     }
 
-    .cat-link span {
+    .category-node span {
+      display: block;
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       line-height: 1.45;
     }
 
-    .cat-link .emoji {
-      font-size: 1.5rem;
-    }
-
     .cat-decision {
-      background: linear-gradient(180deg, var(--blue-1), rgba(255,255,255,0.94));
+      background: linear-gradient(180deg, var(--decision-1), rgba(255, 255, 255, 0.96));
     }
 
     .cat-pedago {
-      background: linear-gradient(180deg, var(--green-1), rgba(255,255,255,0.94));
+      background: linear-gradient(180deg, var(--pedago-1), rgba(255, 255, 255, 0.96));
     }
 
     .cat-vie {
-      background: linear-gradient(180deg, var(--peach-1), rgba(255,255,255,0.94));
+      background: linear-gradient(180deg, var(--vie-1), rgba(255, 255, 255, 0.96));
     }
 
     .cat-sante {
-      background: linear-gradient(180deg, var(--violet-1), rgba(255,255,255,0.94));
+      background: linear-gradient(180deg, var(--sante-1), rgba(255, 255, 255, 0.96));
+    }
+
+    .institution-mini-list {
+      display: grid;
+      gap: 8px;
+      position: relative;
+      margin-left: 16px;
+      padding-left: 12px;
+    }
+
+    .institution-mini-list::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--line);
+      border-radius: 999px;
+    }
+
+    .mini-link {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1.2px solid var(--line);
+      border-radius: 16px;
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .mini-link::before {
+      content: "";
+      position: absolute;
+      left: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 2px;
+      background: var(--line);
+      border-radius: 999px;
+    }
+
+    .mini-link:hover {
+      border-color: #bac5d6;
+      background: #fff;
     }
 
     .section {
       margin-top: 18px;
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(255,255,255,0.88);
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
       padding: 18px;
-      scroll-margin-top: 18px;
+      border-radius: 28px;
+      border: 1.5px solid var(--line-strong);
+      scroll-margin-top: 14px;
+    }
+
+    .section-decision {
+      background: linear-gradient(180deg, rgba(237, 245, 255, 0.88), rgba(255, 255, 255, 0.88));
+    }
+
+    .section-pedago {
+      background: linear-gradient(180deg, rgba(238, 250, 241, 0.88), rgba(255, 255, 255, 0.88));
+    }
+
+    .section-vie {
+      background: linear-gradient(180deg, rgba(255, 245, 238, 0.88), rgba(255, 255, 255, 0.88));
+    }
+
+    .section-sante {
+      background: linear-gradient(180deg, rgba(248, 241, 255, 0.88), rgba(255, 255, 255, 0.88));
     }
 
     .section-head {
@@ -182,87 +390,71 @@
     }
 
     .section-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      border: 1.5px solid var(--line);
       display: grid;
       place-items: center;
-      font-size: 1.45rem;
-      border: 1px solid var(--line);
+      font-size: 1.35rem;
       box-shadow: 0 10px 18px rgba(130, 140, 170, 0.08);
-      flex: 0 0 52px;
+      flex: 0 0 50px;
     }
+
+    .section-decision .section-icon { background: var(--decision-2); }
+    .section-pedago .section-icon { background: var(--pedago-2); }
+    .section-vie .section-icon { background: var(--vie-2); }
+    .section-sante .section-icon { background: var(--sante-2); }
 
     .section h2 {
       margin: 0;
-      font-size: 1.45rem;
+      font-size: 1.42rem;
       letter-spacing: -0.02em;
     }
 
-    .section p.lead {
+    .lead {
       margin: 4px 0 0;
       color: var(--muted);
       line-height: 1.55;
     }
 
-    .section-decision {
-      background: linear-gradient(180deg, rgba(234,244,255,0.85), rgba(255,255,255,0.84));
-    }
-
-    .section-pedago {
-      background: linear-gradient(180deg, rgba(238,250,241,0.88), rgba(255,255,255,0.84));
-    }
-
-    .section-vie {
-      background: linear-gradient(180deg, rgba(255,245,237,0.88), rgba(255,255,255,0.84));
-    }
-
-    .section-sante {
-      background: linear-gradient(180deg, rgba(248,241,255,0.88), rgba(255,255,255,0.84));
-    }
-
-    .section-decision .section-icon { background: var(--blue-2); }
-    .section-pedago .section-icon { background: var(--green-2); }
-    .section-vie .section-icon { background: var(--peach-2); }
-    .section-sante .section-icon { background: var(--violet-2); }
-
     .institution-list {
       display: grid;
       gap: 12px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .institution {
-      background: var(--card);
+      background: rgba(255, 255, 255, 0.95);
       border: 1.5px solid var(--line-strong);
       border-radius: 24px;
-      box-shadow: 0 10px 22px rgba(130, 140, 170, 0.08);
+      box-shadow: 0 10px 24px rgba(130, 140, 170, 0.08);
       overflow: hidden;
-      scroll-margin-top: 18px;
+      scroll-margin-top: 14px;
     }
 
     .institution.active {
-      border-color: #aeb8c7;
-      box-shadow: 0 14px 28px rgba(130, 140, 170, 0.14);
+      border-color: #b3bed0;
+      box-shadow: 0 16px 28px rgba(130, 140, 170, 0.12);
     }
 
     .inst-btn {
       width: 100%;
       border: none;
       background: transparent;
-      cursor: pointer;
-      text-align: left;
-      padding: 16px 16px 14px;
+      padding: 15px;
       display: flex;
       justify-content: space-between;
       gap: 12px;
       align-items: center;
+      text-align: left;
+      cursor: pointer;
     }
 
     .inst-left {
       display: flex;
-      align-items: center;
       gap: 14px;
+      align-items: center;
       min-width: 0;
     }
 
@@ -270,11 +462,12 @@
       width: 54px;
       height: 54px;
       border-radius: 18px;
+      border: 1.4px solid var(--line);
       display: grid;
       place-items: center;
-      font-size: 1.45rem;
-      border: 1px solid var(--line);
+      font-size: 1.42rem;
       flex: 0 0 54px;
+      box-shadow: 0 10px 18px rgba(130, 140, 170, 0.07);
     }
 
     .inst-title-wrap {
@@ -287,15 +480,14 @@
       padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
       font-size: 0.82rem;
       font-weight: 800;
-      color: var(--text);
-      background: rgba(255,255,255,0.86);
     }
 
     .inst-title {
       margin: 0;
-      font-size: 1.15rem;
+      font-size: 1.14rem;
       line-height: 1.2;
       letter-spacing: -0.02em;
     }
@@ -317,8 +509,8 @@
     .chevron {
       display: inline-block;
       margin-top: 6px;
+      font-size: 1.12rem;
       transition: transform 0.2s ease;
-      font-size: 1.15rem;
     }
 
     .institution.active .chevron {
@@ -327,21 +519,21 @@
 
     .inst-content {
       display: none;
-      padding: 0 16px 16px;
+      padding: 0 15px 15px;
       gap: 12px;
     }
 
     .institution.active .inst-content {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.08fr 0.92fr;
     }
 
     .info-box,
     .side-box {
       border-radius: 20px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,255,0.92));
-      padding: 15px;
+      border: 1.4px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(249, 251, 255, 0.93));
+      padding: 14px;
     }
 
     .mini-logic {
@@ -353,8 +545,8 @@
 
     .mini-step {
       border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.9);
+      border: 1.3px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
       padding: 12px;
     }
 
@@ -367,14 +559,14 @@
     .mini-step span {
       font-size: 0.88rem;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.42;
     }
 
     .block {
       border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.92);
-      padding: 14px;
+      border: 1.3px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      padding: 13px;
       margin-bottom: 10px;
     }
 
@@ -404,11 +596,11 @@
 
     .memory {
       border-radius: 18px;
-      padding: 14px;
-      border: 1px solid var(--line);
+      padding: 13px;
+      border: 1.3px solid var(--line);
       margin-bottom: 10px;
+      line-height: 1.58;
       font-weight: 600;
-      line-height: 1.6;
     }
 
     .memory strong {
@@ -419,51 +611,52 @@
     .quiz-btn {
       width: 100%;
       min-height: 46px;
-      border: 1px solid var(--line);
       border-radius: 16px;
-      background: rgba(255,255,255,0.96);
+      border: 1.3px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text);
       font: inherit;
       font-weight: 800;
       cursor: pointer;
-      color: var(--text);
     }
 
     .quiz-answer {
       display: none;
       margin-top: 10px;
       border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.94);
+      border: 1.3px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
       padding: 13px;
-      line-height: 1.6;
+      line-height: 1.58;
     }
 
     .quiz-answer.show {
       display: block;
     }
 
-    .inst-ca .inst-badge, .inst-ca .memory { background: linear-gradient(180deg, var(--blue-2), rgba(255,255,255,0.94)); }
-    .inst-disc .inst-badge, .inst-disc .memory { background: linear-gradient(180deg, #ffd9df, rgba(255,255,255,0.94)); }
-    .inst-pedago .inst-badge, .inst-pedago .memory { background: linear-gradient(180deg, var(--green-2), rgba(255,255,255,0.94)); }
-    .inst-educ .inst-badge, .inst-educ .memory { background: linear-gradient(180deg, var(--peach-2), rgba(255,255,255,0.94)); }
-    .inst-cvl .inst-badge, .inst-cvl .memory { background: linear-gradient(180deg, var(--violet-2), rgba(255,255,255,0.94)); }
-    .inst-cesce .inst-badge, .inst-cesce .memory { background: linear-gradient(180deg, #f3d8ff, rgba(255,255,255,0.94)); }
-    .inst-chs .inst-badge, .inst-chs .memory { background: linear-gradient(180deg, #e3e8f1, rgba(255,255,255,0.94)); }
+    .inst-ca .inst-badge, .inst-ca .memory { background: linear-gradient(180deg, var(--decision-2), rgba(255, 255, 255, 0.96)); }
+    .inst-disc .inst-badge, .inst-disc .memory { background: linear-gradient(180deg, var(--danger-2), rgba(255, 255, 255, 0.96)); }
+    .inst-pedago .inst-badge, .inst-pedago .memory { background: linear-gradient(180deg, var(--pedago-2), rgba(255, 255, 255, 0.96)); }
+    .inst-educ .inst-badge, .inst-educ .memory { background: linear-gradient(180deg, var(--vie-2), rgba(255, 255, 255, 0.96)); }
+    .inst-cvl .inst-badge, .inst-cvl .memory { background: linear-gradient(180deg, var(--sante-2), rgba(255, 255, 255, 0.96)); }
+    .inst-cesce .inst-badge, .inst-cesce .memory { background: linear-gradient(180deg, #efd8ff, rgba(255, 255, 255, 0.96)); }
+    .inst-chs .inst-badge, .inst-chs .memory { background: linear-gradient(180deg, var(--neutral-2), rgba(255, 255, 255, 0.96)); }
 
     .footer {
       margin-top: 16px;
       text-align: center;
       color: var(--muted);
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(255,255,255,0.9);
       border-radius: 24px;
       padding: 15px;
-      box-shadow: var(--shadow);
     }
 
-    @media (max-width: 920px) {
-      .categories {
+    @media (max-width: 960px) {
+      .category-row {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .branch-line {
+        width: calc(100% - 60px);
       }
 
       .institution.active .inst-content {
@@ -475,23 +668,39 @@
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
       .page {
         width: min(100%, calc(100% - 14px));
       }
 
-      .categories {
+      .search-row,
+      .category-row {
         grid-template-columns: 1fr;
       }
 
-      .topbar,
-      .section {
+      .branch-line,
+      .trunk,
+      .category-col::before,
+      .institution-mini-list::before,
+      .mini-link::before {
+        display: none;
+      }
+
+      .institution-mini-list {
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      .hero,
+      .panel,
+      .section,
+      .footer {
         border-radius: 24px;
       }
 
       .inst-btn {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
       }
 
       .inst-right {
@@ -502,43 +711,89 @@
 </head>
 <body>
   <div class="page">
-    <section class="topbar">
-      <div class="tiny-pills">
-        <span class="tiny-pill">🎤 Oral 3</span>
-        <span class="tiny-pill">📚 Révision</span>
-        <span class="tiny-pill">✨ Clair et interactif</span>
+    <section class="hero">
+      <div class="hero-pills">
+        <span class="hero-pill">🎤 Oral 3</span>
+        <span class="hero-pill">🧭 Version schéma</span>
+        <span class="hero-pill">✨ Plus interactif</span>
       </div>
 
-      <h1>Instances du collège / lycée</h1>
-      <p class="subtitle">
-        Clique directement sur une catégorie, puis sur une institution.
-        Les détails s’ouvrent juste en dessous et la page t’amène automatiquement dessus.
+      <h1>Schéma des instances</h1>
+      <p>
+        Clique sur une branche du schéma, puis sur une institution.
+        Les détails s’ouvrent directement en dessous pour te permettre de comprendre la logique d’un seul regard.
       </p>
+    </section>
 
-      <div class="categories">
-        <a class="cat-link cat-decision" href="#decision">
-          <div class="emoji">🏛️</div>
-          <strong>Pilotage & décision</strong>
-          <span>Décider, voter, adopter des règles, sanctionner.</span>
-        </a>
+    <section class="panel">
+      <div class="search-row">
+        <input id="searchInput" class="search" type="text" placeholder="Rechercher une institution, un rôle, un mot-clé..." />
+        <button id="resetBtn" class="btn" type="button">Réinitialiser</button>
+      </div>
 
-        <a class="cat-link cat-pedago" href="#pedago">
-          <div class="emoji">🌿</div>
-          <strong>Pédagogie</strong>
-          <span>Réfléchir aux enseignements et au suivi des élèves.</span>
-        </a>
+      <div class="map-title">
+        <h2>Vue logique</h2>
+        <p>On part de l’établissement, puis on suit les grandes branches d’action.</p>
+      </div>
 
-        <a class="cat-link cat-vie" href="#vie">
-          <div class="emoji">🤝</div>
-          <strong>Vie scolaire</strong>
-          <span>Aider l’élève et représenter sa parole.</span>
-        </a>
+      <div class="root-wrap">
+        <div class="root-node">
+          <div class="emoji">🏫</div>
+          <strong>Établissement scolaire</strong>
+          <span>4 logiques : décider, organiser la pédagogie, accompagner, protéger</span>
+        </div>
+      </div>
 
-        <a class="cat-link cat-sante" href="#sante">
-          <div class="emoji">🌸</div>
-          <strong>Santé & sécurité</strong>
-          <span>Prévenir, protéger, coordonner les actions de sécurité.</span>
-        </a>
+      <div class="trunk"></div>
+      <div class="branch-line"></div>
+
+      <div class="category-row">
+        <div class="category-col">
+          <a href="#decision" class="category-node cat-decision">
+            <div class="cat-emoji">🏛️</div>
+            <strong>Pilotage & décision</strong>
+            <span>Décider, adopter des règles, voter, sanctionner.</span>
+          </a>
+          <div class="institution-mini-list">
+            <a href="#ca" class="mini-link">Conseil d’administration</a>
+            <a href="#discipline" class="mini-link">Conseil de discipline</a>
+          </div>
+        </div>
+
+        <div class="category-col">
+          <a href="#pedago" class="category-node cat-pedago">
+            <div class="cat-emoji">🌿</div>
+            <strong>Pédagogie</strong>
+            <span>Réfléchir à l’enseignement et au suivi des élèves.</span>
+          </a>
+          <div class="institution-mini-list">
+            <a href="#conseil-pedagogique" class="mini-link">Conseil pédagogique</a>
+          </div>
+        </div>
+
+        <div class="category-col">
+          <a href="#vie" class="category-node cat-vie">
+            <div class="cat-emoji">🤝</div>
+            <strong>Vie scolaire</strong>
+            <span>Aider l’élève et représenter sa parole.</span>
+          </a>
+          <div class="institution-mini-list">
+            <a href="#commission-educative" class="mini-link">Commission éducative</a>
+            <a href="#cvl-cvc" class="mini-link">CVL / CVC</a>
+          </div>
+        </div>
+
+        <div class="category-col">
+          <a href="#sante" class="category-node cat-sante">
+            <div class="cat-emoji">🌸</div>
+            <strong>Santé & sécurité</strong>
+            <span>Prévenir, coordonner, protéger l’établissement.</span>
+          </a>
+          <div class="institution-mini-list">
+            <a href="#cesce" class="mini-link">CESCE</a>
+            <a href="#chs" class="mini-link">CHS</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -552,7 +807,7 @@
       </div>
 
       <div class="institution-list">
-        <article class="institution inst-ca">
+        <article id="ca" class="institution inst-ca">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">🏛️</div>
@@ -571,18 +826,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Décider pour l’établissement.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoirs</strong>
-                  <span>Voter, adopter, organiser.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Direction, personnels, parents, élèves.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Décider pour l’établissement.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Voter, adopter, organiser.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Direction, personnels, parents, élèves.</span></div>
               </div>
 
               <div class="block">
@@ -629,7 +875,7 @@
           </div>
         </article>
 
-        <article class="institution inst-disc">
+        <article id="discipline" class="institution inst-disc">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">⚖️</div>
@@ -648,18 +894,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Juger une faute grave.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoirs</strong>
-                  <span>Examiner, entendre, sanctionner.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Direction, CPE, personnels, parents, élèves.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Juger une faute grave.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Examiner, entendre, sanctionner.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Direction, CPE, personnels, parents, élèves.</span></div>
               </div>
 
               <div class="block">
@@ -714,7 +951,7 @@
       </div>
 
       <div class="institution-list">
-        <article class="institution inst-pedago">
+        <article id="conseil-pedagogique" class="institution inst-pedago">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">📘</div>
@@ -733,18 +970,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Réfléchir à la pédagogie.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoirs</strong>
-                  <span>Donner des avis, proposer des dispositifs.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Direction, professeurs, CPE, chef de travaux.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Réfléchir à la pédagogie.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Donner des avis, proposer des dispositifs.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Direction, professeurs, CPE, chef de travaux.</span></div>
               </div>
 
               <div class="block">
@@ -798,7 +1026,7 @@
       </div>
 
       <div class="institution-list">
-        <article class="institution inst-educ">
+        <article id="commission-educative" class="institution inst-educ">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">🤝</div>
@@ -817,18 +1045,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Aider face aux difficultés.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoir</strong>
-                  <span>Prévenir et responsabiliser.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Direction, personnels, professeur, parent.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Aider face aux difficultés.</span></div>
+                <div class="mini-step"><strong>Devoir</strong><span>Prévenir et responsabiliser.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Direction, personnels, professeur, parent.</span></div>
               </div>
 
               <div class="block">
@@ -865,7 +1084,7 @@
           </div>
         </article>
 
-        <article class="institution inst-cvl">
+        <article id="cvl-cvc" class="institution inst-cvl">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">🗣️</div>
@@ -884,18 +1103,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Représenter les élèves.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoirs</strong>
-                  <span>Proposer, donner un avis, faire remonter.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Élèves, personnels, parents, direction.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Représenter les élèves.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Proposer, donner un avis, faire remonter.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Élèves, personnels, parents, direction.</span></div>
               </div>
 
               <div class="block">
@@ -946,7 +1156,7 @@
       </div>
 
       <div class="institution-list">
-        <article class="institution inst-cesce">
+        <article id="cesce" class="institution inst-cesce">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">🌍</div>
@@ -965,18 +1175,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Piloter des actions éducatives.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoirs</strong>
-                  <span>Proposer, coordonner, évaluer.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Direction, santé, personnels, élèves, parents.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Piloter des actions éducatives.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Proposer, coordonner, évaluer.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Direction, santé, personnels, élèves, parents.</span></div>
               </div>
 
               <div class="block">
@@ -1025,7 +1226,7 @@
           </div>
         </article>
 
-        <article class="institution inst-chs">
+        <article id="chs" class="institution inst-chs">
           <button class="inst-btn" type="button">
             <div class="inst-left">
               <div class="inst-badge">🦺</div>
@@ -1044,18 +1245,9 @@
           <div class="inst-content">
             <div class="info-box">
               <div class="mini-logic">
-                <div class="mini-step">
-                  <strong>Rôle</strong>
-                  <span>Veiller à la sécurité.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Devoirs</strong>
-                  <span>Proposer des améliorations.</span>
-                </div>
-                <div class="mini-step">
-                  <strong>Composition</strong>
-                  <span>Direction, gestionnaire, CPE, collectivité, personnels.</span>
-                </div>
+                <div class="mini-step"><strong>Rôle</strong><span>Veiller à la sécurité.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Proposer des améliorations.</span></div>
+                <div class="mini-step"><strong>Composition</strong><span>Direction, gestionnaire, CPE, collectivité, personnels.</span></div>
               </div>
 
               <div class="block">
@@ -1102,18 +1294,33 @@
     </section>
 
     <div class="footer">
-      Clique sur une catégorie, puis sur une institution : les infos s’ouvrent directement au bon endroit.
+      Lis la logique générale en haut, puis ouvre chaque institution pour réviser plus vite.
     </div>
   </div>
 
   <script>
     const institutions = document.querySelectorAll(".institution");
+    const searchInput = document.getElementById("searchInput");
+    const resetBtn = document.getElementById("resetBtn");
 
     function closeAll() {
       institutions.forEach(inst => inst.classList.remove("active"));
-      document.querySelectorAll(".quiz-answer").forEach(answer => {
-        answer.classList.remove("show");
-      });
+      document.querySelectorAll(".quiz-answer").forEach(el => el.classList.remove("show"));
+    }
+
+    function openInstitutionById(id, doScroll = true) {
+      const target = document.getElementById(id);
+      if (!target || !target.classList.contains("institution")) return;
+
+      closeAll();
+      target.style.display = "";
+      target.classList.add("active");
+
+      if (doScroll) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 90);
+      }
     }
 
     institutions.forEach(inst => {
@@ -1122,14 +1329,15 @@
       const quizAnswer = inst.querySelector(".quiz-answer");
 
       btn.addEventListener("click", () => {
-        const isOpen = inst.classList.contains("active");
+        const wasOpen = inst.classList.contains("active");
         closeAll();
 
-        if (!isOpen) {
+        if (!wasOpen) {
           inst.classList.add("active");
+          history.replaceState(null, "", "#" + inst.id);
           setTimeout(() => {
             inst.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 120);
+          }, 90);
         }
       });
 
@@ -1139,11 +1347,68 @@
       });
     });
 
-    document.querySelectorAll('.cat-link').forEach(link => {
+    function normalize(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function applySearch() {
+      const query = normalize(searchInput.value.trim());
+
+      institutions.forEach(inst => {
+        const text = normalize(inst.innerText);
+        const show = query === "" || text.includes(query);
+        inst.style.display = show ? "" : "none";
+        if (!show) inst.classList.remove("active");
+      });
+    }
+
+    searchInput.addEventListener("input", applySearch);
+
+    resetBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      closeAll();
+      applySearch();
+      history.replaceState(null, "", window.location.pathname);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.querySelectorAll('.category-node').forEach(link => {
       link.addEventListener('click', () => {
         closeAll();
       });
     });
+
+    document.querySelectorAll('.mini-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        const id = href.slice(1);
+
+        e.preventDefault();
+        openInstitutionById(id, true);
+      });
+    });
+
+    function handleHashOnLoad() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = hash.slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      if (target.classList.contains("institution")) {
+        openInstitutionById(id, false);
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 120);
+      }
+    }
+
+    window.addEventListener("hashchange", handleHashOnLoad);
+    handleHashOnLoad();
   </script>
 </body>
 </html>
