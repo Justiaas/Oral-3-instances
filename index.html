@@ -3,41 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Révisions — Instances & conseils</title>
+  <title>Oral 3 — Schéma des instances</title>
   <style>
     :root {
-      --bg1: #fff8fb;
-      --bg2: #f4f7ff;
-      --bg3: #f2fff8;
-
-      --text: #243044;
-      --muted: #667085;
+      --bg: #faf8ff;
+      --bg2: #f7fbff;
+      --text: #24324a;
+      --muted: #657289;
       --white: rgba(255, 255, 255, 0.82);
-      --border: rgba(90, 102, 128, 0.14);
-      --shadow: 0 18px 45px rgba(122, 132, 170, 0.14);
+      --line: rgba(80, 92, 120, 0.15);
+      --shadow: 0 18px 40px rgba(126, 136, 175, 0.14);
 
-      --rose: #f6b7cc;
-      --violet: #c7b6ff;
-      --green: #bde9c9;
-      --blue: #b9defc;
-      --peach: #ffd6b8;
-      --yellow: #fff0b8;
-      --slate: #d7deed;
+      --decision-1: #e7f2ff;
+      --decision-2: #b7d8ff;
+      --decision-3: #5e91c8;
 
-      --rose-strong: #d96b95;
-      --violet-strong: #7d6add;
-      --green-strong: #55a874;
-      --blue-strong: #4b90d9;
-      --peach-strong: #d88a52;
-      --slate-strong: #6f7b98;
+      --pedago-1: #edf9f1;
+      --pedago-2: #bfe7cb;
+      --pedago-3: #5d9e73;
+
+      --vie-1: #fff3eb;
+      --vie-2: #ffd8bf;
+      --vie-3: #d68b58;
+
+      --sante-1: #f8f0ff;
+      --sante-2: #dec5ff;
+      --sante-3: #8a69cc;
+
+      --hero-pink: rgba(246, 183, 204, 0.32);
+      --hero-violet: rgba(199, 182, 255, 0.28);
+      --hero-green: rgba(189, 233, 201, 0.26);
+      --hero-blue: rgba(185, 222, 252, 0.26);
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -45,16 +45,16 @@
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(246, 183, 204, 0.35), transparent 22%),
-        radial-gradient(circle at 90% 12%, rgba(199, 182, 255, 0.28), transparent 24%),
-        radial-gradient(circle at 18% 80%, rgba(189, 233, 201, 0.28), transparent 22%),
-        radial-gradient(circle at 85% 78%, rgba(185, 222, 252, 0.32), transparent 24%),
-        linear-gradient(180deg, var(--bg1), var(--bg2) 48%, var(--bg3));
+        radial-gradient(circle at 10% 10%, var(--hero-pink), transparent 22%),
+        radial-gradient(circle at 92% 10%, var(--hero-violet), transparent 24%),
+        radial-gradient(circle at 18% 80%, var(--hero-green), transparent 22%),
+        radial-gradient(circle at 86% 78%, var(--hero-blue), transparent 24%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
       min-height: 100vh;
     }
 
     .page {
-      width: min(1120px, calc(100% - 24px));
+      width: min(1180px, calc(100% - 24px));
       margin: 0 auto;
       padding: 18px 0 42px;
     }
@@ -63,125 +63,99 @@
       position: relative;
       overflow: hidden;
       border-radius: 34px;
-      padding: 30px 24px 26px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,255,255,0.66));
-      border: 1px solid rgba(255,255,255,0.8);
+      padding: 28px 24px 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7));
+      border: 1px solid rgba(255,255,255,0.85);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      margin-bottom: 18px;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(2px);
-      z-index: 0;
+      backdrop-filter: blur(16px);
+      margin-bottom: 16px;
     }
 
     .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -60px -60px auto;
       width: 220px;
       height: 220px;
-      right: -60px;
-      top: -50px;
-      background: rgba(199, 182, 255, 0.22);
+      border-radius: 50%;
+      background: rgba(222, 197, 255, 0.25);
     }
 
-    .hero::after {
-      width: 170px;
-      height: 170px;
-      left: -50px;
-      bottom: -50px;
-      background: rgba(246, 183, 204, 0.2);
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .mini-pills {
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
-    .mini-pill {
-      border-radius: 999px;
+    .pill {
       padding: 8px 12px;
-      font-size: 0.92rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(90, 102, 128, 0.08);
+      box-shadow: 0 8px 16px rgba(120,130,160,0.06);
       font-weight: 700;
-      background: rgba(255,255,255,0.75);
-      border: 1px solid rgba(100, 110, 135, 0.1);
-      box-shadow: 0 8px 18px rgba(130, 140, 170, 0.08);
+      font-size: 0.92rem;
     }
 
     h1 {
       margin: 0 0 10px;
-      font-size: clamp(2rem, 4.8vw, 3.35rem);
-      line-height: 1.03;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.02;
       letter-spacing: -0.04em;
+      position: relative;
+      z-index: 1;
     }
 
     .hero p {
       margin: 0;
-      max-width: 680px;
+      max-width: 780px;
+      line-height: 1.65;
       color: var(--muted);
       font-size: 1rem;
-      line-height: 1.65;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-art {
+    .logic-strip {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 12px;
-      align-content: center;
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
     }
 
-    .sticker {
-      min-height: 110px;
-      border-radius: 28px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.72);
+    .logic-box {
+      padding: 14px 14px 12px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.74);
       border: 1px solid rgba(90,102,128,0.08);
-      box-shadow: 0 12px 26px rgba(120,130,160,0.1);
-      text-align: center;
+      box-shadow: 0 12px 24px rgba(120,130,160,0.08);
     }
 
-    .sticker.big {
-      grid-column: span 2;
-      min-height: 84px;
-      border-radius: 24px 40px 24px 40px;
+    .logic-box strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.96rem;
     }
 
-    .sticker .emoji {
-      font-size: 1.9rem;
+    .logic-box span {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
     }
 
-    .sticker .label {
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .pink-bg { background: rgba(246, 183, 204, 0.22); }
-    .violet-bg { background: rgba(199, 182, 255, 0.22); }
-    .green-bg { background: rgba(189, 233, 201, 0.26); }
-    .blue-bg { background: rgba(185, 222, 252, 0.26); }
+    .logic-box.decision { background: linear-gradient(180deg, var(--decision-1), rgba(255,255,255,0.9)); }
+    .logic-box.pedago { background: linear-gradient(180deg, var(--pedago-1), rgba(255,255,255,0.9)); }
+    .logic-box.vie { background: linear-gradient(180deg, var(--vie-1), rgba(255,255,255,0.9)); }
+    .logic-box.sante { background: linear-gradient(180deg, var(--sante-1), rgba(255,255,255,0.9)); }
 
     .panel {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(255,255,255,0.9);
       box-shadow: var(--shadow);
       border-radius: 30px;
       padding: 18px;
@@ -193,6 +167,7 @@
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 12px;
+      align-items: center;
       margin-bottom: 14px;
     }
 
@@ -200,352 +175,400 @@
       width: 100%;
       min-height: 52px;
       border-radius: 18px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(90,102,128,0.12);
       padding: 0 16px;
       font: inherit;
       font-size: 1rem;
       color: var(--text);
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       outline: none;
     }
 
     .button {
       min-height: 52px;
+      border: 1px solid rgba(90,102,128,0.12);
       border-radius: 18px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.92);
-      padding: 0 18px;
+      padding: 0 16px;
       font: inherit;
       font-weight: 800;
+      background: rgba(255,255,255,0.95);
       color: var(--text);
       cursor: pointer;
-      transition: 0.15s ease;
+      box-shadow: 0 8px 16px rgba(120,130,160,0.06);
     }
 
     .button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 18px rgba(120, 130, 160, 0.1);
     }
 
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
+    .schema-head {
+      text-align: center;
+      margin-bottom: 18px;
     }
 
-    .tab {
-      border: none;
-      border-radius: 999px;
-      padding: 11px 16px;
-      font: inherit;
-      font-weight: 800;
-      cursor: pointer;
-      transition: 0.15s ease;
-      color: var(--text);
-      box-shadow: 0 8px 16px rgba(120,130,160,0.08);
+    .schema-head h2 {
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
     }
 
-    .tab[data-category="decision"] { background: rgba(185, 222, 252, 0.8); }
-    .tab[data-category="pedagogie"] { background: rgba(189, 233, 201, 0.8); }
-    .tab[data-category="vie"] { background: rgba(255, 214, 184, 0.8); }
-    .tab[data-category="sante"] { background: rgba(246, 183, 204, 0.78); }
-
-    .tab.active {
-      outline: 2px solid rgba(36, 48, 68, 0.14);
-      transform: translateY(-1px);
-    }
-
-    .progress-box {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .progress-copy {
-      margin-bottom: 8px;
+    .schema-head p {
+      margin: 0;
       color: var(--muted);
-      font-weight: 700;
+    }
+
+    .root-node-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .root-node {
+      text-align: center;
+      padding: 16px 20px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.76));
+      border: 1px solid rgba(90,102,128,0.12);
+      box-shadow: var(--shadow);
+      min-width: 280px;
+    }
+
+    .root-node .emoji {
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .root-node strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .root-node span {
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .progress-rail {
-      width: 100%;
-      height: 14px;
-      border-radius: 999px;
-      background: rgba(214, 223, 238, 0.8);
+    .schema-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .group {
+      border-radius: 30px;
+      padding: 18px;
+      border: 1px solid rgba(90,102,128,0.1);
+      box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
     }
 
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f6b7cc, #c7b6ff, #b9defc);
-      transition: width 0.25s ease;
+    .group::before {
+      content: "";
+      position: absolute;
+      top: -16px;
+      left: 24px;
+      width: 2px;
+      height: 26px;
+      background: rgba(90,102,128,0.16);
     }
 
-    .progress-actions {
-      display: flex;
-      gap: 10px;
-    }
+    .group.decision { background: linear-gradient(180deg, var(--decision-1), rgba(255,255,255,0.92)); }
+    .group.pedagogie { background: linear-gradient(180deg, var(--pedago-1), rgba(255,255,255,0.92)); }
+    .group.vie { background: linear-gradient(180deg, var(--vie-1), rgba(255,255,255,0.92)); }
+    .group.sante { background: linear-gradient(180deg, var(--sante-1), rgba(255,255,255,0.92)); }
 
-    .progress-btn {
-      min-height: 48px;
-      border: none;
-      border-radius: 16px;
-      padding: 0 16px;
-      font: inherit;
-      font-weight: 800;
-      cursor: pointer;
-      color: var(--text);
-      background: rgba(255,255,255,0.94);
-      box-shadow: 0 8px 16px rgba(120,130,160,0.08);
-    }
-
-    .progress-btn.primary {
-      background: linear-gradient(135deg, rgba(199,182,255,0.95), rgba(185,222,252,0.95));
-    }
-
-    .category-view {
-      display: none;
-    }
-
-    .category-view.active {
-      display: block;
-    }
-
-    .category-head {
+    .group-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 6px 0 10px;
+      margin-bottom: 10px;
     }
 
-    .category-icon {
-      width: 46px;
-      height: 46px;
+    .group-icon {
+      width: 48px;
+      height: 48px;
       border-radius: 18px;
       display: grid;
       place-items: center;
       font-size: 1.35rem;
-      box-shadow: 0 10px 20px rgba(120,130,160,0.1);
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 10px 18px rgba(120,130,160,0.08);
+      flex: 0 0 48px;
     }
 
-    .category-head h2 {
+    .group h3 {
       margin: 0;
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       letter-spacing: -0.02em;
     }
 
-    .category-sub {
-      margin: 0 0 16px 58px;
+    .group small {
+      display: block;
       color: var(--muted);
-      line-height: 1.6;
+      margin-top: 4px;
+      font-size: 0.93rem;
+      line-height: 1.45;
     }
 
-    .cards {
+    .node-list {
       display: grid;
-      gap: 14px;
+      gap: 10px;
+      margin-top: 14px;
     }
 
-    .card {
+    .node-btn {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(90,102,128,0.1);
+      border-radius: 20px;
+      padding: 14px 14px;
       background: rgba(255,255,255,0.92);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: transform 0.16s ease;
+      cursor: pointer;
+      transition: 0.18s ease;
+      box-shadow: 0 8px 16px rgba(120,130,160,0.05);
     }
 
-    .card:hover {
-      transform: translateY(-2px);
+    .node-btn:hover,
+    .node-btn.active {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 20px rgba(120,130,160,0.1);
+      border-color: rgba(90,102,128,0.18);
     }
 
-    .card.shape-a { border-radius: 34px 22px 34px 22px; }
-    .card.shape-b { border-radius: 24px 42px 22px 34px; }
-    .card.shape-c { border-radius: 40px 22px 26px 22px; }
-    .card.shape-d { border-radius: 26px 26px 46px 22px; }
-    .card.shape-e { border-radius: 44px 22px 44px 18px; }
-    .card.shape-f { border-radius: 24px 38px 24px 38px; }
-
-    .card.hidden {
-      display: none;
-    }
-
-    .card-header {
+    .node-top {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
-      padding: 18px 18px 14px;
-      cursor: pointer;
-      border-left: 8px solid var(--accent);
+      margin-bottom: 6px;
     }
 
-    .card-main {
+    .node-title {
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .node-icon {
+      font-size: 1.2rem;
+    }
+
+    .node-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .detail-card,
+    .detail-side {
+      border-radius: 28px;
+      padding: 18px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(90,102,128,0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .detail-placeholder {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 18px;
+      border-radius: 24px;
+      border: 1px dashed rgba(90,102,128,0.18);
+      background: rgba(255,255,255,0.66);
+    }
+
+    .path {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .path-badge {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(90,102,128,0.1);
+    }
+
+    .detail-title {
       display: flex;
       gap: 14px;
       align-items: center;
-      min-width: 0;
+      margin-bottom: 14px;
     }
 
-    .icon-bubble {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
+    .detail-title .big-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 22px;
       display: grid;
       place-items: center;
-      font-size: 1.55rem;
-      flex: 0 0 56px;
-      background: color-mix(in srgb, var(--accent) 28%, white);
+      font-size: 1.8rem;
+      background: var(--accent-soft);
       box-shadow: 0 10px 20px rgba(120,130,160,0.08);
+      flex: 0 0 62px;
     }
 
-    .title-wrap {
-      min-width: 0;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-bottom: 7px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 800;
-      background: color-mix(in srgb, var(--accent) 18%, white);
-      color: color-mix(in srgb, var(--accent) 88%, black);
-    }
-
-    .card h3 {
-      margin: 0;
-      font-size: 1.3rem;
-      line-height: 1.2;
+    .detail-title h4 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
       letter-spacing: -0.02em;
     }
 
-    .card-side {
-      text-align: right;
+    .detail-title p {
+      margin: 0;
       color: var(--muted);
-      font-weight: 700;
-      flex: 0 0 auto;
     }
 
-    .chevron {
-      font-size: 1.2rem;
-      display: inline-block;
-      margin-top: 4px;
-      transition: transform 0.2s ease;
-    }
-
-    .card.open .chevron {
-      transform: rotate(180deg);
-    }
-
-    .card-content {
-      display: none;
-      padding: 0 18px 18px;
-      gap: 12px;
-    }
-
-    .card.open .card-content {
+    .mini-schema {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
     }
 
-    .info {
+    .mini-box {
+      border-radius: 18px;
+      padding: 12px;
+      border: 1px solid rgba(90,102,128,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,255,0.92));
+    }
+
+    .mini-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .mini-box span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .content-block {
       border-radius: 22px;
       padding: 16px;
-      border: 1px solid rgba(100,110,135,0.09);
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,255,0.92));
+      background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,250,255,0.92));
+      border: 1px solid rgba(90,102,128,0.08);
+      margin-bottom: 12px;
     }
 
-    .info h4 {
+    .content-block h5 {
       margin: 0 0 8px;
       font-size: 1rem;
     }
 
-    .info p {
+    .content-block p {
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .info ul {
+    .content-block ul {
       margin: 8px 0 0 18px;
       padding: 0;
     }
 
-    .info li {
+    .content-block li {
       margin-bottom: 6px;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
-    .quiz {
-      border-radius: 20px;
-      padding: 14px 16px;
-      font-weight: 700;
-      background: color-mix(in srgb, var(--accent) 14%, white);
-      color: color-mix(in srgb, var(--accent) 74%, black);
-      border: 1px solid color-mix(in srgb, var(--accent) 20%, white);
+    .memory-card {
+      border-radius: 24px;
+      padding: 16px;
+      background: linear-gradient(180deg, var(--accent-soft), rgba(255,255,255,0.9));
+      border: 1px solid rgba(90,102,128,0.08);
+      margin-bottom: 12px;
     }
 
-    .empty {
+    .memory-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .memory-card p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .quiz-button {
+      width: 100%;
+      min-height: 48px;
+      border: none;
+      border-radius: 18px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), var(--accent-soft));
+      color: var(--text);
+      box-shadow: 0 8px 16px rgba(120,130,160,0.08);
+    }
+
+    .quiz-answer {
       display: none;
-      border-radius: 22px;
-      padding: 22px;
-      text-align: center;
-      color: var(--muted);
-      background: rgba(255,255,255,0.92);
-      border: 1px dashed var(--border);
+      margin-top: 10px;
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(90,102,128,0.08);
+      line-height: 1.6;
     }
 
-    .empty.show {
+    .quiz-answer.show {
       display: block;
     }
 
     .footer {
-      margin-top: 16px;
+      margin-top: 10px;
       text-align: center;
       color: var(--muted);
       background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.88);
       border-radius: 24px;
       padding: 16px;
       box-shadow: var(--shadow);
     }
 
-    .decision-accent { --accent: var(--blue); }
-    .discipline-accent { --accent: var(--rose); }
-    .pedago-accent { --accent: var(--green); }
-    .educ-accent { --accent: var(--peach); }
-    .cvl-accent { --accent: var(--violet); }
-    .cesce-accent { --accent: var(--rose); }
-    .chs-accent { --accent: var(--slate); }
+    .theme-decision { --accent-soft: linear-gradient(180deg, var(--decision-2), rgba(255,255,255,0.95)); }
+    .theme-pedagogie { --accent-soft: linear-gradient(180deg, var(--pedago-2), rgba(255,255,255,0.95)); }
+    .theme-vie { --accent-soft: linear-gradient(180deg, var(--vie-2), rgba(255,255,255,0.95)); }
+    .theme-sante { --accent-soft: linear-gradient(180deg, var(--sante-2), rgba(255,255,255,0.95)); }
 
-    @media (max-width: 860px) {
-      .hero-grid,
-      .controls,
-      .progress-box {
+    @media (max-width: 980px) {
+      .schema-grid,
+      .detail,
+      .logic-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mini-schema {
         grid-template-columns: 1fr;
-      }
-
-      .card-header {
-        align-items: flex-start;
-      }
-
-      .card-side {
-        text-align: left;
-      }
-
-      .progress-actions {
-        width: 100%;
-      }
-
-      .progress-btn {
-        flex: 1;
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 720px) {
+      .logic-strip,
+      .schema-grid,
+      .detail,
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
       .page {
         width: min(100%, calc(100% - 14px));
       }
@@ -559,16 +582,9 @@
         padding: 22px 16px;
       }
 
-      .card-header {
-        flex-direction: column;
-      }
-
-      .card-main {
-        align-items: flex-start;
-      }
-
-      .category-sub {
-        margin-left: 0;
+      .root-node {
+        min-width: auto;
+        width: 100%;
       }
     }
   </style>
@@ -576,34 +592,34 @@
 <body>
   <div class="page">
     <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="mini-pills">
-            <span class="mini-pill">📚 Révision</span>
-            <span class="mini-pill">🌸 Pastel</span>
-            <span class="mini-pill">✨ Progressif</span>
-          </div>
-          <h1>Instances & conseils du collège / lycée</h1>
-          <p>
-            Une version plus douce et plus agréable à lire : une catégorie à la fois,
-            des fiches jolies et dépliables, une progression simple, et une recherche
-            qui ne gêne plus la lecture.
-          </p>
-        </div>
+      <div class="pill-row">
+        <span class="pill">🎤 Oral 3</span>
+        <span class="pill">🧭 Vue d’ensemble</span>
+        <span class="pill">✨ Schéma interactif</span>
+      </div>
 
-        <div class="hero-art">
-          <div class="sticker pink-bg">
-            <div class="emoji">🎤</div>
-            <div class="label">L’essentiel pour ton Oral 3</div>
-          </div>
-          <div class="sticker violet-bg">
-            <div class="emoji">🗂️</div>
-            <div class="label">Méthode + repères + révision</div>
-          </div>
-          <div class="sticker big green-bg">
-            <div class="emoji">💪 📖 ✨</div>
-            <div class="label">Prends confiance : tu révises plus clairement et plus calmement</div>
-          </div>
+      <h1>Comprendre les instances d’un seul coup d’œil</h1>
+      <p>
+        Clique sur une instance dans le schéma pour voir son rôle, ses devoirs et sa composition.
+        L’idée est de comprendre la logique générale avant d’entrer dans le détail.
+      </p>
+
+      <div class="logic-strip">
+        <div class="logic-box decision">
+          <strong>🔹 Décider / sanctionner</strong>
+          <span>Les instances qui fixent le cadre ou jugent les fautes graves.</span>
+        </div>
+        <div class="logic-box pedago">
+          <strong>🌿 Organiser la pédagogie</strong>
+          <span>Les instances qui réfléchissent aux enseignements et au suivi des élèves.</span>
+        </div>
+        <div class="logic-box vie">
+          <strong>🍑 Accompagner / représenter</strong>
+          <span>Les instances qui aident les élèves et portent leur parole.</span>
+        </div>
+        <div class="logic-box sante">
+          <strong>🌸 Prévenir / protéger</strong>
+          <span>Les instances liées à la santé, la citoyenneté, la sécurité et l’environnement.</span>
         </div>
       </div>
     </section>
@@ -611,416 +627,249 @@
     <section class="panel">
       <div class="controls">
         <input id="searchInput" class="search" type="text" placeholder="Rechercher une instance, un rôle, un mot-clé..." />
-        <button id="clearSearch" class="button" type="button">Effacer la recherche</button>
+        <button id="resetBtn" class="button" type="button">Réinitialiser</button>
       </div>
 
-      <div class="tabs">
-        <button class="tab active" data-category="decision">🔹 Pilotage & décision</button>
-        <button class="tab" data-category="pedagogie">🌿 Pédagogie</button>
-        <button class="tab" data-category="vie">🍑 Vie scolaire</button>
-        <button class="tab" data-category="sante">🌸 Santé & sécurité</button>
+      <div class="schema-head">
+        <h2>Schéma logique</h2>
+        <p>On part de l’établissement, puis on regarde les 4 grandes logiques d’action.</p>
       </div>
+
+      <div class="root-node-wrap">
+        <div class="root-node">
+          <div class="emoji">🏫</div>
+          <strong>Établissement scolaire</strong>
+          <span>4 grandes logiques : décider, enseigner, accompagner, protéger</span>
+        </div>
+      </div>
+
+      <div id="schemaGrid" class="schema-grid"></div>
     </section>
 
     <section class="panel">
-      <div class="progress-box">
-        <div>
-          <div class="progress-copy" id="progressText">Catégorie 1 sur 4</div>
-          <div class="progress-rail">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
-        </div>
-
-        <div class="progress-actions">
-          <button class="progress-btn" id="prevBtn" type="button">← Précédent</button>
-          <button class="progress-btn primary" id="nextBtn" type="button">Suivant →</button>
-        </div>
-      </div>
-
-      <div id="emptyState" class="empty">Aucun résultat dans cette catégorie.</div>
-
-      <div class="category-view active" data-category-view="decision">
-        <div class="category-head">
-          <div class="category-icon blue-bg">🏛️</div>
-          <h2>Pilotage & décision</h2>
-        </div>
-        <p class="category-sub">Les instances qui décident, jugent ou posent le cadre de l’établissement.</p>
-
-        <div class="cards">
-          <article class="card shape-a decision-accent" data-search="conseil administration ca budget règlement intérieur projet établissement décision organisation">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">🏛️</div>
-                <div class="title-wrap">
-                  <span class="badge">CA</span>
-                  <h3>Conseil d’administration</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Instance principale de décision
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Instance principale de décision du collège ou du lycée.</p>
-              </div>
-              <div class="info">
-                <h4>Devoirs</h4>
-                <ul>
-                  <li>Vote le budget</li>
-                  <li>Adopte le règlement intérieur</li>
-                  <li>Adopte le projet d’établissement</li>
-                  <li>Décide des grandes règles d’organisation</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition</h4>
-                <ul>
-                  <li>Chef d’établissement</li>
-                  <li>Chef d’établissement adjoint</li>
-                  <li>Gestionnaire</li>
-                  <li>CPE</li>
-                  <li>Représentants des collectivités territoriales</li>
-                  <li>Représentants de la commune</li>
-                  <li>Personnalité(s) qualifiée(s)</li>
-                  <li>Représentants des personnels</li>
-                  <li>Représentants des parents d’élèves</li>
-                  <li>Représentants des élèves</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : que vote et qu’adopte le CA ?</div>
-            </div>
-          </article>
-
-          <article class="card shape-b discipline-accent" data-search="conseil discipline fautes graves sanction exclusion définitive élève">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">⚖️</div>
-                <div class="title-wrap">
-                  <span class="badge">Discipline</span>
-                  <h3>Conseil de discipline</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Fautes graves des élèves
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Juge les fautes graves des élèves.</p>
-              </div>
-              <div class="info">
-                <h4>Devoirs</h4>
-                <ul>
-                  <li>Examine les faits</li>
-                  <li>Entend l’élève</li>
-                  <li>Vote une sanction pouvant aller jusqu’à l’exclusion définitive</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition</h4>
-                <ul>
-                  <li>Chef d’établissement</li>
-                  <li>Adjoint</li>
-                  <li>Gestionnaire</li>
-                  <li>Un CPE</li>
-                  <li>Représentants des personnels</li>
-                  <li>Représentants des parents</li>
-                  <li>Représentants des élèves</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : jusqu’où peut aller la sanction ?</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="category-view" data-category-view="pedagogie">
-        <div class="category-head">
-          <div class="category-icon green-bg">🌿</div>
-          <h2>Pédagogie</h2>
-        </div>
-        <p class="category-sub">Les instances qui organisent et réfléchissent à l’enseignement.</p>
-
-        <div class="cards">
-          <article class="card shape-c pedago-accent" data-search="conseil pédagogique réflexion pédagogique enseignements suivi évaluation accompagnement projet établissement">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">📘</div>
-                <div class="title-wrap">
-                  <span class="badge">Pédagogie</span>
-                  <h3>Conseil pédagogique</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Réflexion pédagogique
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Grande instance de réflexion pédagogique.</p>
-              </div>
-              <div class="info">
-                <h4>Devoirs</h4>
-                <ul>
-                  <li>Donne des avis sur l’organisation des enseignements</li>
-                  <li>Le suivi et l’évaluation des élèves</li>
-                  <li>Prépare la partie pédagogique du projet d’établissement</li>
-                  <li>Propose des dispositifs d’accompagnement</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition</h4>
-                <ul>
-                  <li>Chef d’établissement</li>
-                  <li>Professeurs principaux</li>
-                  <li>Au moins un professeur par discipline ou champ disciplinaire</li>
-                  <li>CPE</li>
-                  <li>DDFPT / chef de travaux</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : sur quoi le conseil pédagogique donne-t-il des avis ?</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="category-view" data-category-view="vie">
-        <div class="category-head">
-          <div class="category-icon" style="background: rgba(255,214,184,0.58)">🍑</div>
-          <h2>Vie scolaire & accompagnement</h2>
-        </div>
-        <p class="category-sub">Les instances qui accompagnent les élèves et représentent leur parole.</p>
-
-        <div class="cards">
-          <article class="card shape-d educ-accent" data-search="commission éducative solution éducative comportement scolaire prévention responsabilisation aide">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">🤝</div>
-                <div class="title-wrap">
-                  <span class="badge">Éducative</span>
-                  <h3>Commission éducative</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Prévenir avant sanction
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Trouver une solution éducative aux difficultés d’un élève, sur le plan comportemental ou scolaire.</p>
-              </div>
-              <div class="info">
-                <h4>Devoir</h4>
-                <p>Proposer des mesures d’aide, de prévention et de responsabilisation avant une sanction plus lourde.</p>
-              </div>
-              <div class="info">
-                <h4>Composition</h4>
-                <ul>
-                  <li>Chef d’établissement ou son représentant</li>
-                  <li>Des personnels de l’établissement</li>
-                  <li>Au moins un professeur</li>
-                  <li>Au moins un parent d’élève</li>
-                  <li>D’autres personnes peuvent être invitées selon la situation</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : quel est son but avant une sanction plus lourde ?</div>
-            </div>
-          </article>
-
-          <article class="card shape-e cvl-accent" data-search="cvl cvc conseil vie lycéenne collégienne vie scolaire règlement orientation restauration internat santé sécurité activités">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">🗣️</div>
-                <div class="title-wrap">
-                  <span class="badge">CVL / CVC</span>
-                  <h3>Conseil de vie lycéenne / collégienne</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Voix des élèves
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Représente les lycéens ou collégiens sur les questions de vie scolaire.</p>
-              </div>
-              <div class="info">
-                <h4>Devoirs</h4>
-                <ul>
-                  <li>Faire des propositions sur le règlement intérieur</li>
-                  <li>Donner un avis sur l’organisation du temps scolaire</li>
-                  <li>Aborder l’orientation, la restauration, l’internat</li>
-                  <li>Traiter la santé, la sécurité et les activités culturelles et sportives</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition — Lycée</h4>
-                <ul>
-                  <li>10 lycéens élus</li>
-                  <li>5 enseignants ou personnels d’éducation</li>
-                  <li>3 personnels administratifs, sociaux et de santé</li>
-                  <li>2 parents d’élèves</li>
-                  <li>Chef d’établissement président</li>
-                  <li>Vice-président : un élève</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition — Collège</h4>
-                <ul>
-                  <li>Chef d’établissement</li>
-                  <li>Représentants des élèves</li>
-                  <li>Représentants des personnels</li>
-                  <li>Au moins un enseignant</li>
-                  <li>Au moins un parent</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : sur quels sujets le CVL/CVC peut-il donner un avis ?</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="category-view" data-category-view="sante">
-        <div class="category-head">
-          <div class="category-icon pink-bg">🌸</div>
-          <h2>Santé & sécurité</h2>
-        </div>
-        <p class="category-sub">Les instances liées à la prévention, la santé, l’environnement et la sécurité.</p>
-
-        <div class="cards">
-          <article class="card shape-f cesce-accent" data-search="cesce santé citoyenneté environnement prévention développement durable égalité violences harcèlement">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">🌍</div>
-                <div class="title-wrap">
-                  <span class="badge">CESCE</span>
-                  <h3>Comité d’éducation à la santé, à la citoyenneté et à l’environnement</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Prévention & citoyenneté
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Pilote les actions éducatives liées à la santé, la citoyenneté et l’environnement.</p>
-              </div>
-              <div class="info">
-                <h4>Devoirs</h4>
-                <ul>
-                  <li>Proposer, coordonner et évaluer des actions</li>
-                  <li>Agir sur la prévention</li>
-                  <li>Travailler sur la citoyenneté et le développement durable</li>
-                  <li>Traiter la santé, l’égalité, la prévention des violences et du harcèlement</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition</h4>
-                <ul>
-                  <li>Chef d’établissement</li>
-                  <li>Adjoint</li>
-                  <li>Gestionnaire</li>
-                  <li>CPE</li>
-                  <li>Infirmier(ère)</li>
-                  <li>Assistant(e) social(e)</li>
-                  <li>Enseignants</li>
-                  <li>Autres personnels</li>
-                  <li>Représentants des élèves</li>
-                  <li>Représentants des parents</li>
-                  <li>Représentant de la collectivité territoriale</li>
-                  <li>Personnalité(s) qualifiée(s) / partenaires extérieurs</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : quels grands domaines pilote le CESCE ?</div>
-            </div>
-          </article>
-
-          <article class="card shape-b chs-accent" data-search="chs hygiène sécurité prévention risques formation sécurité lycées techniques professionnels">
-            <div class="card-header">
-              <div class="card-main">
-                <div class="icon-bubble">🦺</div>
-                <div class="title-wrap">
-                  <span class="badge">CHS</span>
-                  <h3>Commission hygiène et sécurité</h3>
-                </div>
-              </div>
-              <div class="card-side">
-                Sécurité de l’établissement
-                <div class="chevron">⌄</div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="info">
-                <h4>Rôle</h4>
-                <p>Veille aux conditions d’hygiène et de sécurité dans l’établissement.</p>
-              </div>
-              <div class="info">
-                <h4>Devoirs</h4>
-                <ul>
-                  <li>Faire des propositions au CA</li>
-                  <li>Améliorer la sécurité</li>
-                  <li>Développer la prévention des risques</li>
-                  <li>Renforcer la formation à la sécurité</li>
-                  <li>Existe surtout dans les lycées techniques et professionnels</li>
-                </ul>
-              </div>
-              <div class="info">
-                <h4>Composition</h4>
-                <ul>
-                  <li>Chef d’établissement</li>
-                  <li>Gestionnaire</li>
-                  <li>CPE</li>
-                  <li>DDFPT / chef de travaux</li>
-                  <li>Représentant de la collectivité</li>
-                  <li>Représentants des personnels</li>
-                  <li>Peuvent aussi participer : 2 parents, 2 élèves, adjoint, médecin scolaire, infirmier(ère)</li>
-                </ul>
-              </div>
-              <div class="quiz">Question flash : à qui la CHS fait-elle des propositions ?</div>
-            </div>
-          </article>
+      <div id="detailContainer" class="detail">
+        <div class="detail-placeholder">
+          Clique sur une instance dans le schéma pour afficher sa fiche détaillée ici.
         </div>
       </div>
     </section>
 
     <div class="footer">
-      Une révision plus douce : pastel, progressive, et sans barre collée pendant la lecture.
+      Astuce : commence par retenir la logique globale, puis clique sur chaque bloc pour apprendre les détails.
     </div>
   </div>
 
   <script>
-    const categories = ["decision", "pedagogie", "vie", "sante"];
-    let currentIndex = 0;
+    const DATA = {
+      decision: {
+        title: "Pilotage & décision",
+        icon: "🏛️",
+        summary: "Décider, voter, adopter des règles ou juger des fautes graves.",
+        className: "decision",
+        themeClass: "theme-decision",
+        items: [
+          {
+            id: "ca",
+            icon: "🏛️",
+            short: "Décision principale",
+            name: "Conseil d’administration",
+            role: "Instance principale de décision du collège ou du lycée.",
+            duties: [
+              "Vote le budget",
+              "Adopte le règlement intérieur",
+              "Adopte le projet d’établissement",
+              "Décide des grandes règles d’organisation"
+            ],
+            composition: [
+              "Chef d’établissement",
+              "Chef d’établissement adjoint",
+              "Gestionnaire",
+              "CPE",
+              "Représentants des collectivités territoriales",
+              "Représentants de la commune",
+              "Personnalité(s) qualifiée(s)",
+              "Représentants des personnels",
+              "Représentants des parents d’élèves",
+              "Représentants des élèves"
+            ],
+            memo: "À retenir : le CA, c’est l’instance qui décide officiellement.",
+            quiz: "Que vote et qu’adopte le CA ?"
+          },
+          {
+            id: "discipline",
+            icon: "⚖️",
+            short: "Sanction des fautes graves",
+            name: "Conseil de discipline",
+            role: "Juge les fautes graves des élèves.",
+            duties: [
+              "Examine les faits",
+              "Entend l’élève",
+              "Vote une sanction pouvant aller jusqu’à l’exclusion définitive"
+            ],
+            composition: [
+              "Chef d’établissement",
+              "Adjoint",
+              "Gestionnaire",
+              "Un CPE",
+              "Représentants des personnels",
+              "Représentants des parents",
+              "Représentants des élèves"
+            ],
+            memo: "À retenir : le conseil de discipline intervient quand la faute est grave.",
+            quiz: "Jusqu’où peut aller la sanction ?"
+          }
+        ]
+      },
+      pedagogie: {
+        title: "Pédagogie",
+        icon: "🌿",
+        summary: "Réfléchir à l’enseignement, au suivi et à l’accompagnement.",
+        className: "pedagogie",
+        themeClass: "theme-pedagogie",
+        items: [
+          {
+            id: "pedago",
+            icon: "📘",
+            short: "Réflexion pédagogique",
+            name: "Conseil pédagogique",
+            role: "Grande instance de réflexion pédagogique.",
+            duties: [
+              "Donne des avis sur l’organisation des enseignements",
+              "Travaille sur le suivi et l’évaluation des élèves",
+              "Prépare la partie pédagogique du projet d’établissement",
+              "Propose des dispositifs d’accompagnement"
+            ],
+            composition: [
+              "Chef d’établissement",
+              "Professeurs principaux",
+              "Au moins un professeur par discipline ou champ disciplinaire",
+              "CPE",
+              "DDFPT / chef de travaux (surtout en lycée pro/techno)"
+            ],
+            memo: "À retenir : ici, on ne sanctionne pas, on réfléchit à la pédagogie.",
+            quiz: "Sur quoi le conseil pédagogique donne-t-il des avis ?"
+          }
+        ]
+      },
+      vie: {
+        title: "Vie scolaire & accompagnement",
+        icon: "🍑",
+        summary: "Aider l’élève, prévenir, et représenter la parole des lycéens ou collégiens.",
+        className: "vie",
+        themeClass: "theme-vie",
+        items: [
+          {
+            id: "educative",
+            icon: "🤝",
+            short: "Aider avant sanction lourde",
+            name: "Commission éducative",
+            role: "Trouver une solution éducative aux difficultés d’un élève sur le plan comportemental ou scolaire.",
+            duties: [
+              "Proposer des mesures d’aide",
+              "Faire de la prévention",
+              "Chercher des mesures de responsabilisation avant une sanction plus lourde"
+            ],
+            composition: [
+              "Chef d’établissement ou son représentant",
+              "Des personnels de l’établissement",
+              "Au moins un professeur",
+              "Au moins un parent d’élève",
+              "D’autres personnes peuvent être invitées selon la situation"
+            ],
+            memo: "À retenir : on cherche d’abord une réponse éducative avant une sanction plus lourde.",
+            quiz: "Quel est son but avant une sanction plus lourde ?"
+          },
+          {
+            id: "cvlcvc",
+            icon: "🗣️",
+            short: "Voix des élèves",
+            name: "Conseil de vie lycéenne / collégienne (CVL / CVC)",
+            role: "Représente les lycéens ou collégiens sur les questions de vie scolaire.",
+            duties: [
+              "Faire des propositions sur le règlement intérieur",
+              "Donner un avis sur l’organisation du temps scolaire",
+              "Aborder l’orientation, la restauration et l’internat",
+              "Traiter la santé, la sécurité, et les activités culturelles et sportives"
+            ],
+            composition: [
+              "Lycée : 10 lycéens élus, 5 enseignants ou personnels d’éducation, 3 personnels administratifs/sociaux/de santé, 2 parents d’élèves, chef d’établissement président, vice-président élève",
+              "Collège : chef d’établissement, représentants des élèves, représentants des personnels, au moins un enseignant, au moins un parent"
+            ],
+            memo: "À retenir : le CVL/CVC sert à faire entendre la parole des élèves.",
+            quiz: "Sur quels sujets le CVL/CVC peut-il donner un avis ?"
+          }
+        ]
+      },
+      sante: {
+        title: "Santé & sécurité",
+        icon: "🌸",
+        summary: "Prévenir, protéger, éduquer à la citoyenneté et améliorer la sécurité.",
+        className: "sante",
+        themeClass: "theme-sante",
+        items: [
+          {
+            id: "cesce",
+            icon: "🌍",
+            short: "Prévention & citoyenneté",
+            name: "Comité d’éducation à la santé, à la citoyenneté et à l’environnement (CESCE)",
+            role: "Pilote les actions éducatives liées à la santé, la citoyenneté et l’environnement.",
+            duties: [
+              "Proposer des actions de prévention",
+              "Coordonner et évaluer ces actions",
+              "Travailler sur la citoyenneté et le développement durable",
+              "Traiter la santé, l’égalité, la prévention des violences et du harcèlement"
+            ],
+            composition: [
+              "Chef d’établissement",
+              "Adjoint",
+              "Gestionnaire",
+              "CPE",
+              "Infirmier(ère)",
+              "Assistant(e) social(e)",
+              "Enseignants",
+              "Autres personnels de l’établissement",
+              "Représentants des élèves",
+              "Représentants des parents",
+              "Représentant de la collectivité territoriale",
+              "Personnalité(s) qualifiée(s) / partenaires extérieurs"
+            ],
+            memo: "À retenir : le CESCE pilote la prévention et l’éducation à la citoyenneté, à la santé et à l’environnement.",
+            quiz: "Quels grands domaines le CESCE pilote-t-il ?"
+          },
+          {
+            id: "chs",
+            icon: "🦺",
+            short: "Hygiène et sécurité",
+            name: "Commission hygiène et sécurité (CHS)",
+            role: "Veille aux conditions d’hygiène et de sécurité dans l’établissement.",
+            duties: [
+              "Faire des propositions au CA pour améliorer la sécurité",
+              "Développer la prévention des risques",
+              "Renforcer la formation à la sécurité",
+              "Existe surtout dans les lycées techniques et professionnels"
+            ],
+            composition: [
+              "Chef d’établissement",
+              "Gestionnaire",
+              "CPE",
+              "DDFPT / chef de travaux",
+              "Représentant de la collectivité",
+              "Représentants des personnels",
+              "Peuvent aussi participer : 2 parents, 2 élèves, adjoint, médecin scolaire, infirmier(ère)"
+            ],
+            memo: "À retenir : la CHS est centrée sur l’hygiène, la sécurité et la prévention des risques.",
+            quiz: "À qui la CHS fait-elle des propositions ?"
+          }
+        ]
+      }
+    };
 
-    const tabs = document.querySelectorAll(".tab");
-    const views = document.querySelectorAll(".category-view");
+    const schemaGrid = document.getElementById("schemaGrid");
+    const detailContainer = document.getElementById("detailContainer");
     const searchInput = document.getElementById("searchInput");
-    const clearSearch = document.getElementById("clearSearch");
-    const progressText = document.getElementById("progressText");
-    const progressFill = document.getElementById("progressFill");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const emptyState = document.getElementById("emptyState");
+    const resetBtn = document.getElementById("resetBtn");
+
+    let currentSelection = null;
 
     function normalize(text) {
       return text
@@ -1029,77 +878,182 @@
         .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function updateCategory(category) {
-      currentIndex = categories.indexOf(category);
+    function renderSchema(filter = "") {
+      schemaGrid.innerHTML = "";
+      const query = normalize(filter);
 
-      tabs.forEach(tab => {
-        tab.classList.toggle("active", tab.dataset.category === category);
-      });
-
-      views.forEach(view => {
-        view.classList.toggle("active", view.dataset.categoryView === category);
-      });
-
-      const percent = ((currentIndex + 1) / categories.length) * 100;
-      progressFill.style.width = percent + "%";
-      progressText.textContent = `Catégorie ${currentIndex + 1} sur ${categories.length}`;
-
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === categories.length - 1;
-
-      applyFilters();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function applyFilters() {
-      const query = normalize(searchInput.value.trim());
-      const activeCategory = categories[currentIndex];
-      const cards = document.querySelectorAll(`[data-category-view="${activeCategory}"] .card`);
-
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const haystack = normalize(card.dataset.search + " " + card.innerText);
-        const match = query === "" || haystack.includes(query);
-        card.classList.toggle("hidden", !match);
-        if (match) visibleCount++;
-      });
-
-      emptyState.classList.toggle("show", visibleCount === 0);
-    }
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => updateCategory(tab.dataset.category));
-    });
-
-    prevBtn.addEventListener("click", () => {
-      if (currentIndex > 0) updateCategory(categories[currentIndex - 1]);
-    });
-
-    nextBtn.addEventListener("click", () => {
-      if (currentIndex < categories.length - 1) updateCategory(categories[currentIndex + 1]);
-    });
-
-    searchInput.addEventListener("input", applyFilters);
-
-    clearSearch.addEventListener("click", () => {
-      searchInput.value = "";
-      applyFilters();
-      searchInput.focus();
-    });
-
-    document.querySelectorAll(".card").forEach(card => {
-      const header = card.querySelector(".card-header");
-      header.addEventListener("click", () => {
-        const parent = card.parentElement;
-        parent.querySelectorAll(".card").forEach(other => {
-          if (other !== card) other.classList.remove("open");
+      Object.entries(DATA).forEach(([key, group], groupIndex) => {
+        const visibleItems = group.items.filter(item => {
+          const haystack = normalize(
+            group.title + " " +
+            item.name + " " +
+            item.short + " " +
+            item.role + " " +
+            item.duties.join(" ") + " " +
+            item.composition.join(" ")
+          );
+          return query === "" || haystack.includes(query);
         });
-        card.classList.toggle("open");
+
+        if (visibleItems.length === 0) return;
+
+        const groupEl = document.createElement("div");
+        groupEl.className = `group ${group.className}`;
+        groupEl.innerHTML = `
+          <div class="group-header">
+            <div class="group-icon">${group.icon}</div>
+            <div>
+              <h3>${group.title}</h3>
+              <small>${group.summary}</small>
+            </div>
+          </div>
+          <div class="node-list">
+            ${visibleItems.map(item => `
+              <button class="node-btn ${currentSelection === item.id ? "active" : ""}" data-group="${key}" data-id="${item.id}">
+                <div class="node-top">
+                  <span class="node-title">${item.name}</span>
+                  <span class="node-icon">${item.icon}</span>
+                </div>
+                <div class="node-sub">${item.short}</div>
+              </button>
+            `).join("")}
+          </div>
+        `;
+        schemaGrid.appendChild(groupEl);
       });
+
+      document.querySelectorAll(".node-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const groupKey = btn.dataset.group;
+          const itemId = btn.dataset.id;
+          selectItem(groupKey, itemId);
+        });
+      });
+    }
+
+    function selectItem(groupKey, itemId) {
+      const group = DATA[groupKey];
+      const item = group.items.find(x => x.id === itemId);
+      if (!item) return;
+
+      currentSelection = itemId;
+      renderSchema(searchInput.value);
+
+      detailContainer.innerHTML = `
+        <div class="detail-card ${group.themeClass}">
+          <div class="path">
+            <span class="path-badge">🏫 Établissement</span>
+            <span>→</span>
+            <span class="path-badge">${group.title}</span>
+            <span>→</span>
+            <span class="path-badge">${item.name}</span>
+          </div>
+
+          <div class="detail-title">
+            <div class="big-icon">${item.icon}</div>
+            <div>
+              <h4>${item.name}</h4>
+              <p>${item.short}</p>
+            </div>
+          </div>
+
+          <div class="mini-schema">
+            <div class="mini-box">
+              <strong>1. Rôle</strong>
+              <span>À quoi sert cette instance ?</span>
+            </div>
+            <div class="mini-box">
+              <strong>2. Devoirs</strong>
+              <span>Qu’est-ce qu’elle fait concrètement ?</span>
+            </div>
+            <div class="mini-box">
+              <strong>3. Composition</strong>
+              <span>Qui participe à cette instance ?</span>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <h5>Rôle</h5>
+            <p>${item.role}</p>
+          </div>
+
+          <div class="content-block">
+            <h5>Devoirs</h5>
+            <ul>
+              ${item.duties.map(d => `<li>${d}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-side">
+          <div class="memory-card">
+            <strong>Repère logique</strong>
+            <p>${item.memo}</p>
+          </div>
+
+          <div class="content-block">
+            <h5>Composition</h5>
+            <ul>
+              ${item.composition.map(c => `<li>${c}</li>`).join("")}
+            </ul>
+          </div>
+
+          <button class="quiz-button" id="quizBtn" type="button">Afficher la question flash</button>
+          <div class="quiz-answer" id="quizAnswer">${item.quiz}</div>
+        </div>
+      `;
+
+      const quizBtn = document.getElementById("quizBtn");
+      const quizAnswer = document.getElementById("quizAnswer");
+      quizBtn.addEventListener("click", () => {
+        quizAnswer.classList.toggle("show");
+      });
+    }
+
+    searchInput.addEventListener("input", () => {
+      renderSchema(searchInput.value);
+
+      if (currentSelection) {
+        const allItems = Object.entries(DATA).flatMap(([groupKey, group]) =>
+          group.items.map(item => ({ groupKey, item }))
+        );
+
+        const selectedStillVisible = allItems.some(({ groupKey, item }) => {
+          if (item.id !== currentSelection) return false;
+          const haystack = normalize(
+            DATA[groupKey].title + " " +
+            item.name + " " +
+            item.short + " " +
+            item.role + " " +
+            item.duties.join(" ") + " " +
+            item.composition.join(" ")
+          );
+          return normalize(searchInput.value) === "" || haystack.includes(normalize(searchInput.value));
+        });
+
+        if (!selectedStillVisible) {
+          currentSelection = null;
+          detailContainer.innerHTML = `
+            <div class="detail-placeholder">
+              Aucun résultat affiché pour cette recherche. Essaie un autre mot-clé.
+            </div>
+          `;
+        }
+      }
     });
 
-    updateCategory("decision");
+    resetBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      currentSelection = null;
+      renderSchema("");
+      detailContainer.innerHTML = `
+        <div class="detail-placeholder">
+          Clique sur une instance dans le schéma pour afficher sa fiche détaillée ici.
+        </div>
+      `;
+    });
+
+    renderSchema("");
   </script>
 </body>
 </html>
