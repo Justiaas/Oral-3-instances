@@ -3,41 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oral 3 — Schéma des instances</title>
+  <title>Oral 3 — Instances du collège / lycée</title>
   <style>
     :root {
-      --bg: #faf8ff;
-      --bg2: #f7fbff;
-      --text: #24324a;
-      --muted: #657289;
-      --white: rgba(255, 255, 255, 0.82);
-      --line: rgba(80, 92, 120, 0.15);
-      --shadow: 0 18px 40px rgba(126, 136, 175, 0.14);
+      --bg-1: #fff9fc;
+      --bg-2: #f7f8ff;
+      --bg-3: #f4fff8;
 
-      --decision-1: #e7f2ff;
-      --decision-2: #b7d8ff;
-      --decision-3: #5e91c8;
+      --text: #273248;
+      --muted: #677389;
+      --line: #dfe4ec;
+      --line-strong: #cfd6e2;
+      --card: rgba(255, 255, 255, 0.92);
+      --shadow: 0 14px 34px rgba(130, 140, 170, 0.12);
 
-      --pedago-1: #edf9f1;
-      --pedago-2: #bfe7cb;
-      --pedago-3: #5d9e73;
+      --blue-1: #eaf4ff;
+      --blue-2: #cfe7ff;
+      --blue-3: #5e8fc3;
 
-      --vie-1: #fff3eb;
-      --vie-2: #ffd8bf;
-      --vie-3: #d68b58;
+      --green-1: #eefaf1;
+      --green-2: #d4efdb;
+      --green-3: #5f9e73;
 
-      --sante-1: #f8f0ff;
-      --sante-2: #dec5ff;
-      --sante-3: #8a69cc;
+      --peach-1: #fff5ed;
+      --peach-2: #ffe0cb;
+      --peach-3: #d58c5b;
 
-      --hero-pink: rgba(246, 183, 204, 0.32);
-      --hero-violet: rgba(199, 182, 255, 0.28);
-      --hero-green: rgba(189, 233, 201, 0.26);
-      --hero-blue: rgba(185, 222, 252, 0.26);
+      --violet-1: #f8f1ff;
+      --violet-2: #e4d2ff;
+      --violet-3: #8666c7;
+
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -45,487 +52,389 @@
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, var(--hero-pink), transparent 22%),
-        radial-gradient(circle at 92% 10%, var(--hero-violet), transparent 24%),
-        radial-gradient(circle at 18% 80%, var(--hero-green), transparent 22%),
-        radial-gradient(circle at 86% 78%, var(--hero-blue), transparent 24%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+        radial-gradient(circle at 10% 12%, rgba(255, 209, 227, 0.35), transparent 20%),
+        radial-gradient(circle at 90% 12%, rgba(217, 203, 255, 0.32), transparent 20%),
+        radial-gradient(circle at 18% 82%, rgba(207, 239, 219, 0.28), transparent 22%),
+        radial-gradient(circle at 85% 78%, rgba(207, 231, 255, 0.28), transparent 24%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2) 50%, var(--bg-3));
       min-height: 100vh;
     }
 
     .page {
-      width: min(1180px, calc(100% - 24px));
+      width: min(1100px, calc(100% - 24px));
       margin: 0 auto;
-      padding: 18px 0 42px;
+      padding: 20px 0 42px;
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      padding: 28px 24px 22px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7));
-      border: 1px solid rgba(255,255,255,0.85);
+    .topbar {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(255,255,255,0.88);
+      border-radius: 30px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(14px);
+      padding: 22px 20px;
       margin-bottom: 16px;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: auto -60px -60px auto;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(222, 197, 255, 0.25);
-    }
-
-    .pill-row {
+    .tiny-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
     }
 
-    .pill {
+    .tiny-pill {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(90, 102, 128, 0.08);
-      box-shadow: 0 8px 16px rgba(120,130,160,0.06);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      font-size: 0.9rem;
       font-weight: 700;
-      font-size: 0.92rem;
+      color: var(--text);
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.02;
+      margin: 0 0 8px;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.04;
       letter-spacing: -0.04em;
-      position: relative;
-      z-index: 1;
     }
 
-    .hero p {
+    .subtitle {
       margin: 0;
-      max-width: 780px;
-      line-height: 1.65;
       color: var(--muted);
-      font-size: 1rem;
-      position: relative;
-      z-index: 1;
+      line-height: 1.6;
+      max-width: 760px;
     }
 
-    .logic-strip {
+    .categories {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
       margin-top: 18px;
-      position: relative;
-      z-index: 1;
     }
 
-    .logic-box {
-      padding: 14px 14px 12px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.74);
-      border: 1px solid rgba(90,102,128,0.08);
-      box-shadow: 0 12px 24px rgba(120,130,160,0.08);
-    }
-
-    .logic-box strong {
+    .cat-link {
       display: block;
-      margin-bottom: 5px;
-      font-size: 0.96rem;
-    }
-
-    .logic-box span {
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.45;
-    }
-
-    .logic-box.decision { background: linear-gradient(180deg, var(--decision-1), rgba(255,255,255,0.9)); }
-    .logic-box.pedago { background: linear-gradient(180deg, var(--pedago-1), rgba(255,255,255,0.9)); }
-    .logic-box.vie { background: linear-gradient(180deg, var(--vie-1), rgba(255,255,255,0.9)); }
-    .logic-box.sante { background: linear-gradient(180deg, var(--sante-1), rgba(255,255,255,0.9)); }
-
-    .panel {
-      background: rgba(255,255,255,0.74);
-      border: 1px solid rgba(255,255,255,0.9);
-      box-shadow: var(--shadow);
-      border-radius: 30px;
-      padding: 18px;
-      margin-bottom: 16px;
-      backdrop-filter: blur(14px);
-    }
-
-    .controls {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .search {
-      width: 100%;
-      min-height: 52px;
-      border-radius: 18px;
-      border: 1px solid rgba(90,102,128,0.12);
-      padding: 0 16px;
-      font: inherit;
-      font-size: 1rem;
+      text-decoration: none;
       color: var(--text);
-      background: rgba(255,255,255,0.92);
-      outline: none;
-    }
-
-    .button {
-      min-height: 52px;
-      border: 1px solid rgba(90,102,128,0.12);
-      border-radius: 18px;
-      padding: 0 16px;
-      font: inherit;
-      font-weight: 800;
-      background: rgba(255,255,255,0.95);
-      color: var(--text);
-      cursor: pointer;
-      box-shadow: 0 8px 16px rgba(120,130,160,0.06);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    .schema-head {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .schema-head h2 {
-      margin: 0 0 8px;
-      font-size: 1.7rem;
-      letter-spacing: -0.02em;
-    }
-
-    .schema-head p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .root-node-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 18px;
-      position: relative;
-    }
-
-    .root-node {
-      text-align: center;
-      padding: 16px 20px;
-      border-radius: 26px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.76));
-      border: 1px solid rgba(90,102,128,0.12);
+      border-radius: 24px;
+      padding: 16px 16px 14px;
+      border: 1.5px solid var(--line);
       box-shadow: var(--shadow);
-      min-width: 280px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
 
-    .root-node .emoji {
-      font-size: 2rem;
-      margin-bottom: 6px;
+    .cat-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 28px rgba(130, 140, 170, 0.14);
     }
 
-    .root-node strong {
+    .cat-link strong {
       display: block;
-      font-size: 1.1rem;
+      margin-top: 8px;
       margin-bottom: 4px;
+      font-size: 1.02rem;
     }
 
-    .root-node span {
+    .cat-link span {
       color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .schema-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .group {
-      border-radius: 30px;
-      padding: 18px;
-      border: 1px solid rgba(90,102,128,0.1);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .group::before {
-      content: "";
-      position: absolute;
-      top: -16px;
-      left: 24px;
-      width: 2px;
-      height: 26px;
-      background: rgba(90,102,128,0.16);
-    }
-
-    .group.decision { background: linear-gradient(180deg, var(--decision-1), rgba(255,255,255,0.92)); }
-    .group.pedagogie { background: linear-gradient(180deg, var(--pedago-1), rgba(255,255,255,0.92)); }
-    .group.vie { background: linear-gradient(180deg, var(--vie-1), rgba(255,255,255,0.92)); }
-    .group.sante { background: linear-gradient(180deg, var(--sante-1), rgba(255,255,255,0.92)); }
-
-    .group-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .group-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 1.35rem;
-      background: rgba(255,255,255,0.78);
-      box-shadow: 0 10px 18px rgba(120,130,160,0.08);
-      flex: 0 0 48px;
-    }
-
-    .group h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-    }
-
-    .group small {
-      display: block;
-      color: var(--muted);
-      margin-top: 4px;
       font-size: 0.93rem;
       line-height: 1.45;
     }
 
-    .node-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
+    .cat-link .emoji {
+      font-size: 1.5rem;
     }
 
-    .node-btn {
-      width: 100%;
-      text-align: left;
-      border: 1px solid rgba(90,102,128,0.1);
-      border-radius: 20px;
-      padding: 14px 14px;
-      background: rgba(255,255,255,0.92);
-      cursor: pointer;
-      transition: 0.18s ease;
-      box-shadow: 0 8px 16px rgba(120,130,160,0.05);
+    .cat-decision {
+      background: linear-gradient(180deg, var(--blue-1), rgba(255,255,255,0.94));
     }
 
-    .node-btn:hover,
-    .node-btn.active {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 20px rgba(120,130,160,0.1);
-      border-color: rgba(90,102,128,0.18);
+    .cat-pedago {
+      background: linear-gradient(180deg, var(--green-1), rgba(255,255,255,0.94));
     }
 
-    .node-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 6px;
+    .cat-vie {
+      background: linear-gradient(180deg, var(--peach-1), rgba(255,255,255,0.94));
     }
 
-    .node-title {
-      font-weight: 800;
-      font-size: 1rem;
+    .cat-sante {
+      background: linear-gradient(180deg, var(--violet-1), rgba(255,255,255,0.94));
     }
 
-    .node-icon {
-      font-size: 1.2rem;
-    }
-
-    .node-sub {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
-
-    .detail {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .detail-card,
-    .detail-side {
-      border-radius: 28px;
-      padding: 18px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(90,102,128,0.1);
+    .section {
+      margin-top: 18px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(255,255,255,0.88);
+      border-radius: 30px;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      padding: 18px;
+      scroll-margin-top: 18px;
     }
 
-    .detail-placeholder {
-      text-align: center;
-      color: var(--muted);
-      padding: 28px 18px;
-      border-radius: 24px;
-      border: 1px dashed rgba(90,102,128,0.18);
-      background: rgba(255,255,255,0.66);
-    }
-
-    .path {
+    .section-head {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       align-items: center;
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .path-badge {
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(90,102,128,0.1);
-    }
-
-    .detail-title {
-      display: flex;
-      gap: 14px;
-      align-items: center;
+      gap: 12px;
       margin-bottom: 14px;
     }
 
-    .detail-title .big-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 22px;
+    .section-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 20px;
       display: grid;
       place-items: center;
-      font-size: 1.8rem;
-      background: var(--accent-soft);
-      box-shadow: 0 10px 20px rgba(120,130,160,0.08);
-      flex: 0 0 62px;
+      font-size: 1.45rem;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 18px rgba(130, 140, 170, 0.08);
+      flex: 0 0 52px;
     }
 
-    .detail-title h4 {
-      margin: 0 0 4px;
-      font-size: 1.5rem;
+    .section h2 {
+      margin: 0;
+      font-size: 1.45rem;
       letter-spacing: -0.02em;
     }
 
-    .detail-title p {
-      margin: 0;
+    .section p.lead {
+      margin: 4px 0 0;
       color: var(--muted);
+      line-height: 1.55;
     }
 
-    .mini-schema {
+    .section-decision {
+      background: linear-gradient(180deg, rgba(234,244,255,0.85), rgba(255,255,255,0.84));
+    }
+
+    .section-pedago {
+      background: linear-gradient(180deg, rgba(238,250,241,0.88), rgba(255,255,255,0.84));
+    }
+
+    .section-vie {
+      background: linear-gradient(180deg, rgba(255,245,237,0.88), rgba(255,255,255,0.84));
+    }
+
+    .section-sante {
+      background: linear-gradient(180deg, rgba(248,241,255,0.88), rgba(255,255,255,0.84));
+    }
+
+    .section-decision .section-icon { background: var(--blue-2); }
+    .section-pedago .section-icon { background: var(--green-2); }
+    .section-vie .section-icon { background: var(--peach-2); }
+    .section-sante .section-icon { background: var(--violet-2); }
+
+    .institution-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .institution {
+      background: var(--card);
+      border: 1.5px solid var(--line-strong);
+      border-radius: 24px;
+      box-shadow: 0 10px 22px rgba(130, 140, 170, 0.08);
+      overflow: hidden;
+      scroll-margin-top: 18px;
+    }
+
+    .institution.active {
+      border-color: #aeb8c7;
+      box-shadow: 0 14px 28px rgba(130, 140, 170, 0.14);
+    }
+
+    .inst-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      padding: 16px 16px 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .inst-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .inst-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      border: 1px solid var(--line);
+      flex: 0 0 54px;
+    }
+
+    .inst-title-wrap {
+      min-width: 0;
+    }
+
+    .inst-kicker {
+      display: inline-block;
+      margin-bottom: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text);
+      background: rgba(255,255,255,0.86);
+    }
+
+    .inst-title {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .inst-sub {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.45;
+    }
+
+    .inst-right {
+      text-align: right;
+      color: var(--muted);
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+
+    .chevron {
+      display: inline-block;
+      margin-top: 6px;
+      transition: transform 0.2s ease;
+      font-size: 1.15rem;
+    }
+
+    .institution.active .chevron {
+      transform: rotate(180deg);
+    }
+
+    .inst-content {
+      display: none;
+      padding: 0 16px 16px;
+      gap: 12px;
+    }
+
+    .institution.active .inst-content {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+
+    .info-box,
+    .side-box {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,255,0.92));
+      padding: 15px;
+    }
+
+    .mini-logic {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .mini-box {
-      border-radius: 18px;
-      padding: 12px;
-      border: 1px solid rgba(90,102,128,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,255,0.92));
-    }
-
-    .mini-box strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-
-    .mini-box span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    .content-block {
-      border-radius: 22px;
-      padding: 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,250,255,0.92));
-      border: 1px solid rgba(90,102,128,0.08);
       margin-bottom: 12px;
     }
 
-    .content-block h5 {
+    .mini-step {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.9);
+      padding: 12px;
+    }
+
+    .mini-step strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.93rem;
+    }
+
+    .mini-step span {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .block {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.92);
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+
+    .block:last-child {
+      margin-bottom: 0;
+    }
+
+    .block h4 {
       margin: 0 0 8px;
       font-size: 1rem;
     }
 
-    .content-block p {
-      margin: 0;
-      line-height: 1.65;
-    }
-
-    .content-block ul {
-      margin: 8px 0 0 18px;
-      padding: 0;
-    }
-
-    .content-block li {
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-
-    .memory-card {
-      border-radius: 24px;
-      padding: 16px;
-      background: linear-gradient(180deg, var(--accent-soft), rgba(255,255,255,0.9));
-      border: 1px solid rgba(90,102,128,0.08);
-      margin-bottom: 12px;
-    }
-
-    .memory-card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .memory-card p {
+    .block p {
       margin: 0;
       line-height: 1.6;
     }
 
-    .quiz-button {
-      width: 100%;
-      min-height: 48px;
-      border: none;
+    .block ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    .block li {
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .memory {
       border-radius: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      margin-bottom: 10px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .memory strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .quiz-btn {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.96);
       font: inherit;
       font-weight: 800;
       cursor: pointer;
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), var(--accent-soft));
       color: var(--text);
-      box-shadow: 0 8px 16px rgba(120,130,160,0.08);
     }
 
     .quiz-answer {
       display: none;
       margin-top: 10px;
-      border-radius: 18px;
-      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,0.94);
-      border: 1px solid rgba(90,102,128,0.08);
+      padding: 13px;
       line-height: 1.6;
     }
 
@@ -533,527 +442,708 @@
       display: block;
     }
 
+    .inst-ca .inst-badge, .inst-ca .memory { background: linear-gradient(180deg, var(--blue-2), rgba(255,255,255,0.94)); }
+    .inst-disc .inst-badge, .inst-disc .memory { background: linear-gradient(180deg, #ffd9df, rgba(255,255,255,0.94)); }
+    .inst-pedago .inst-badge, .inst-pedago .memory { background: linear-gradient(180deg, var(--green-2), rgba(255,255,255,0.94)); }
+    .inst-educ .inst-badge, .inst-educ .memory { background: linear-gradient(180deg, var(--peach-2), rgba(255,255,255,0.94)); }
+    .inst-cvl .inst-badge, .inst-cvl .memory { background: linear-gradient(180deg, var(--violet-2), rgba(255,255,255,0.94)); }
+    .inst-cesce .inst-badge, .inst-cesce .memory { background: linear-gradient(180deg, #f3d8ff, rgba(255,255,255,0.94)); }
+    .inst-chs .inst-badge, .inst-chs .memory { background: linear-gradient(180deg, #e3e8f1, rgba(255,255,255,0.94)); }
+
     .footer {
-      margin-top: 10px;
+      margin-top: 16px;
       text-align: center;
       color: var(--muted);
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(255,255,255,0.9);
       border-radius: 24px;
-      padding: 16px;
+      padding: 15px;
       box-shadow: var(--shadow);
     }
 
-    .theme-decision { --accent-soft: linear-gradient(180deg, var(--decision-2), rgba(255,255,255,0.95)); }
-    .theme-pedagogie { --accent-soft: linear-gradient(180deg, var(--pedago-2), rgba(255,255,255,0.95)); }
-    .theme-vie { --accent-soft: linear-gradient(180deg, var(--vie-2), rgba(255,255,255,0.95)); }
-    .theme-sante { --accent-soft: linear-gradient(180deg, var(--sante-2), rgba(255,255,255,0.95)); }
-
-    @media (max-width: 980px) {
-      .schema-grid,
-      .detail,
-      .logic-strip {
-        grid-template-columns: 1fr 1fr;
+    @media (max-width: 920px) {
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .mini-schema {
+      .institution.active .inst-content {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-logic {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 720px) {
-      .logic-strip,
-      .schema-grid,
-      .detail,
-      .controls {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 620px) {
       .page {
         width: min(100%, calc(100% - 14px));
       }
 
-      .hero,
-      .panel {
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar,
+      .section {
         border-radius: 24px;
       }
 
-      .hero {
-        padding: 22px 16px;
+      .inst-btn {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .root-node {
-        min-width: auto;
-        width: 100%;
+      .inst-right {
+        text-align: left;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <section class="hero">
-      <div class="pill-row">
-        <span class="pill">🎤 Oral 3</span>
-        <span class="pill">🧭 Vue d’ensemble</span>
-        <span class="pill">✨ Schéma interactif</span>
+    <section class="topbar">
+      <div class="tiny-pills">
+        <span class="tiny-pill">🎤 Oral 3</span>
+        <span class="tiny-pill">📚 Révision</span>
+        <span class="tiny-pill">✨ Clair et interactif</span>
       </div>
 
-      <h1>Comprendre les instances d’un seul coup d’œil</h1>
-      <p>
-        Clique sur une instance dans le schéma pour voir son rôle, ses devoirs et sa composition.
-        L’idée est de comprendre la logique générale avant d’entrer dans le détail.
+      <h1>Instances du collège / lycée</h1>
+      <p class="subtitle">
+        Clique directement sur une catégorie, puis sur une institution.
+        Les détails s’ouvrent juste en dessous et la page t’amène automatiquement dessus.
       </p>
 
-      <div class="logic-strip">
-        <div class="logic-box decision">
-          <strong>🔹 Décider / sanctionner</strong>
-          <span>Les instances qui fixent le cadre ou jugent les fautes graves.</span>
-        </div>
-        <div class="logic-box pedago">
-          <strong>🌿 Organiser la pédagogie</strong>
-          <span>Les instances qui réfléchissent aux enseignements et au suivi des élèves.</span>
-        </div>
-        <div class="logic-box vie">
-          <strong>🍑 Accompagner / représenter</strong>
-          <span>Les instances qui aident les élèves et portent leur parole.</span>
-        </div>
-        <div class="logic-box sante">
-          <strong>🌸 Prévenir / protéger</strong>
-          <span>Les instances liées à la santé, la citoyenneté, la sécurité et l’environnement.</span>
-        </div>
+      <div class="categories">
+        <a class="cat-link cat-decision" href="#decision">
+          <div class="emoji">🏛️</div>
+          <strong>Pilotage & décision</strong>
+          <span>Décider, voter, adopter des règles, sanctionner.</span>
+        </a>
+
+        <a class="cat-link cat-pedago" href="#pedago">
+          <div class="emoji">🌿</div>
+          <strong>Pédagogie</strong>
+          <span>Réfléchir aux enseignements et au suivi des élèves.</span>
+        </a>
+
+        <a class="cat-link cat-vie" href="#vie">
+          <div class="emoji">🤝</div>
+          <strong>Vie scolaire</strong>
+          <span>Aider l’élève et représenter sa parole.</span>
+        </a>
+
+        <a class="cat-link cat-sante" href="#sante">
+          <div class="emoji">🌸</div>
+          <strong>Santé & sécurité</strong>
+          <span>Prévenir, protéger, coordonner les actions de sécurité.</span>
+        </a>
       </div>
     </section>
 
-    <section class="panel">
-      <div class="controls">
-        <input id="searchInput" class="search" type="text" placeholder="Rechercher une instance, un rôle, un mot-clé..." />
-        <button id="resetBtn" class="button" type="button">Réinitialiser</button>
-      </div>
-
-      <div class="schema-head">
-        <h2>Schéma logique</h2>
-        <p>On part de l’établissement, puis on regarde les 4 grandes logiques d’action.</p>
-      </div>
-
-      <div class="root-node-wrap">
-        <div class="root-node">
-          <div class="emoji">🏫</div>
-          <strong>Établissement scolaire</strong>
-          <span>4 grandes logiques : décider, enseigner, accompagner, protéger</span>
+    <section id="decision" class="section section-decision">
+      <div class="section-head">
+        <div class="section-icon">🏛️</div>
+        <div>
+          <h2>Pilotage & décision</h2>
+          <p class="lead">Les instances qui décident officiellement ou jugent les fautes graves.</p>
         </div>
       </div>
 
-      <div id="schemaGrid" class="schema-grid"></div>
+      <div class="institution-list">
+        <article class="institution inst-ca">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">🏛️</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">CA</span>
+                <h3 class="inst-title">Conseil d’administration</h3>
+                <p class="inst-sub">Instance principale de décision du collège ou du lycée.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Budget, règles, projet
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Décider pour l’établissement.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoirs</strong>
+                  <span>Voter, adopter, organiser.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Direction, personnels, parents, élèves.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Instance principale de décision du collège ou du lycée.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Vote le budget</li>
+                  <li>Adopte le règlement intérieur</li>
+                  <li>Adopte le projet d’établissement</li>
+                  <li>Décide des grandes règles d’organisation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                Le CA = l’instance qui décide officiellement.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li>Chef d’établissement</li>
+                  <li>Chef d’établissement adjoint</li>
+                  <li>Gestionnaire</li>
+                  <li>CPE</li>
+                  <li>Représentants des collectivités territoriales</li>
+                  <li>Représentants de la commune</li>
+                  <li>Personnalité(s) qualifiée(s)</li>
+                  <li>Représentants des personnels</li>
+                  <li>Représentants des parents d’élèves</li>
+                  <li>Représentants des élèves</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Que vote et qu’adopte le conseil d’administration ?</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="institution inst-disc">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">⚖️</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">Discipline</span>
+                <h3 class="inst-title">Conseil de discipline</h3>
+                <p class="inst-sub">Juge les fautes graves des élèves.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Fautes graves
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Juger une faute grave.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoirs</strong>
+                  <span>Examiner, entendre, sanctionner.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Direction, CPE, personnels, parents, élèves.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Juge les fautes graves des élèves.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Examine les faits</li>
+                  <li>Entend l’élève</li>
+                  <li>Vote une sanction pouvant aller jusqu’à l’exclusion définitive</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                Le conseil de discipline intervient quand la faute est grave.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li>Chef d’établissement</li>
+                  <li>Adjoint</li>
+                  <li>Gestionnaire</li>
+                  <li>Un CPE</li>
+                  <li>Représentants des personnels</li>
+                  <li>Représentants des parents</li>
+                  <li>Représentants des élèves</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Jusqu’où peut aller la sanction décidée par le conseil de discipline ?</div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="panel">
-      <div id="detailContainer" class="detail">
-        <div class="detail-placeholder">
-          Clique sur une instance dans le schéma pour afficher sa fiche détaillée ici.
+    <section id="pedago" class="section section-pedago">
+      <div class="section-head">
+        <div class="section-icon">🌿</div>
+        <div>
+          <h2>Pédagogie</h2>
+          <p class="lead">L’instance qui réfléchit à l’enseignement et au suivi des élèves.</p>
         </div>
+      </div>
+
+      <div class="institution-list">
+        <article class="institution inst-pedago">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">📘</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">Pédagogie</span>
+                <h3 class="inst-title">Conseil pédagogique</h3>
+                <p class="inst-sub">Grande instance de réflexion pédagogique.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Enseignements & suivi
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Réfléchir à la pédagogie.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoirs</strong>
+                  <span>Donner des avis, proposer des dispositifs.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Direction, professeurs, CPE, chef de travaux.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Grande instance de réflexion pédagogique.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Donne des avis sur l’organisation des enseignements</li>
+                  <li>Travaille sur le suivi et l’évaluation des élèves</li>
+                  <li>Prépare la partie pédagogique du projet d’établissement</li>
+                  <li>Propose des dispositifs d’accompagnement</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                Ici, on ne sanctionne pas : on organise et on réfléchit à la pédagogie.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li>Chef d’établissement</li>
+                  <li>Professeurs principaux</li>
+                  <li>Au moins un professeur par discipline ou champ disciplinaire</li>
+                  <li>CPE</li>
+                  <li>DDFPT / chef de travaux (surtout en lycée pro/techno)</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Sur quoi le conseil pédagogique donne-t-il des avis ?</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="vie" class="section section-vie">
+      <div class="section-head">
+        <div class="section-icon">🤝</div>
+        <div>
+          <h2>Vie scolaire</h2>
+          <p class="lead">Les instances qui accompagnent les élèves et représentent leur parole.</p>
+        </div>
+      </div>
+
+      <div class="institution-list">
+        <article class="institution inst-educ">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">🤝</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">Éducative</span>
+                <h3 class="inst-title">Commission éducative</h3>
+                <p class="inst-sub">Cherche une solution éducative avant une sanction plus lourde.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Aide & prévention
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Aider face aux difficultés.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoir</strong>
+                  <span>Prévenir et responsabiliser.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Direction, personnels, professeur, parent.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Trouver une solution éducative aux difficultés d’un élève sur le plan comportemental ou scolaire.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoir</h4>
+                <p>Proposer des mesures d’aide, de prévention et de responsabilisation avant une sanction plus lourde.</p>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                La commission éducative cherche d’abord une réponse éducative.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li>Chef d’établissement ou son représentant</li>
+                  <li>Des personnels de l’établissement</li>
+                  <li>Au moins un professeur</li>
+                  <li>Au moins un parent d’élève</li>
+                  <li>D’autres personnes peuvent être invitées selon la situation</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Quel est le but principal de la commission éducative avant une sanction plus lourde ?</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="institution inst-cvl">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">🗣️</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">CVL / CVC</span>
+                <h3 class="inst-title">Conseil de vie lycéenne / collégienne</h3>
+                <p class="inst-sub">Représente les élèves sur les questions de vie scolaire.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Voix des élèves
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Représenter les élèves.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoirs</strong>
+                  <span>Proposer, donner un avis, faire remonter.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Élèves, personnels, parents, direction.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Représente les lycéens ou collégiens sur les questions de vie scolaire.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Faire des propositions sur le règlement intérieur</li>
+                  <li>Donner un avis sur l’organisation du temps scolaire</li>
+                  <li>Aborder l’orientation, la restauration et l’internat</li>
+                  <li>Traiter la santé, la sécurité et les activités culturelles et sportives</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                Le CVL/CVC sert à faire entendre la parole des élèves.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li><strong>Lycée :</strong> 10 lycéens élus, 5 enseignants ou personnels d’éducation, 3 personnels administratifs/sociaux/de santé, 2 parents d’élèves, chef d’établissement président, vice-président élève</li>
+                  <li><strong>Collège :</strong> chef d’établissement, représentants des élèves, représentants des personnels, au moins un enseignant, au moins un parent</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Sur quels sujets le CVL/CVC peut-il donner un avis ?</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sante" class="section section-sante">
+      <div class="section-head">
+        <div class="section-icon">🌸</div>
+        <div>
+          <h2>Santé & sécurité</h2>
+          <p class="lead">Les instances liées à la prévention, à la citoyenneté, à l’environnement et à la sécurité.</p>
+        </div>
+      </div>
+
+      <div class="institution-list">
+        <article class="institution inst-cesce">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">🌍</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">CESCE</span>
+                <h3 class="inst-title">Comité d’éducation à la santé, à la citoyenneté et à l’environnement</h3>
+                <p class="inst-sub">Pilote les actions éducatives liées à la santé, la citoyenneté et l’environnement.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Prévention & citoyenneté
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Piloter des actions éducatives.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoirs</strong>
+                  <span>Proposer, coordonner, évaluer.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Direction, santé, personnels, élèves, parents.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Pilote les actions éducatives liées à la santé, la citoyenneté et l’environnement.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Proposer des actions de prévention</li>
+                  <li>Coordonner et évaluer ces actions</li>
+                  <li>Travailler sur la citoyenneté et le développement durable</li>
+                  <li>Traiter la santé, l’égalité, la prévention des violences et du harcèlement</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                Le CESCE pilote la prévention et l’éducation à la citoyenneté, à la santé et à l’environnement.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li>Chef d’établissement</li>
+                  <li>Adjoint</li>
+                  <li>Gestionnaire</li>
+                  <li>CPE</li>
+                  <li>Infirmier(ère)</li>
+                  <li>Assistant(e) social(e)</li>
+                  <li>Enseignants</li>
+                  <li>Autres personnels de l’établissement</li>
+                  <li>Représentants des élèves</li>
+                  <li>Représentants des parents</li>
+                  <li>Représentant de la collectivité territoriale</li>
+                  <li>Personnalité(s) qualifiée(s) / partenaires extérieurs</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Quels grands domaines le CESCE pilote-t-il ?</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="institution inst-chs">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">🦺</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">CHS</span>
+                <h3 class="inst-title">Commission hygiène et sécurité</h3>
+                <p class="inst-sub">Veille aux conditions d’hygiène et de sécurité dans l’établissement.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Hygiène & sécurité
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step">
+                  <strong>Rôle</strong>
+                  <span>Veiller à la sécurité.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Devoirs</strong>
+                  <span>Proposer des améliorations.</span>
+                </div>
+                <div class="mini-step">
+                  <strong>Composition</strong>
+                  <span>Direction, gestionnaire, CPE, collectivité, personnels.</span>
+                </div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Veille aux conditions d’hygiène et de sécurité dans l’établissement.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Faire des propositions au CA pour améliorer la sécurité</li>
+                  <li>Développer la prévention des risques</li>
+                  <li>Renforcer la formation à la sécurité</li>
+                  <li>Existe surtout dans les lycées techniques et professionnels</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                La CHS est centrée sur l’hygiène, la sécurité et la prévention des risques.
+              </div>
+
+              <div class="block">
+                <h4>Composition</h4>
+                <ul>
+                  <li>Chef d’établissement</li>
+                  <li>Gestionnaire</li>
+                  <li>CPE</li>
+                  <li>DDFPT / chef de travaux</li>
+                  <li>Représentant de la collectivité</li>
+                  <li>Représentants des personnels</li>
+                  <li>Peuvent aussi participer : 2 parents, 2 élèves, adjoint, médecin scolaire, infirmier(ère)</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">À qui la CHS fait-elle des propositions ?</div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <div class="footer">
-      Astuce : commence par retenir la logique globale, puis clique sur chaque bloc pour apprendre les détails.
+      Clique sur une catégorie, puis sur une institution : les infos s’ouvrent directement au bon endroit.
     </div>
   </div>
 
   <script>
-    const DATA = {
-      decision: {
-        title: "Pilotage & décision",
-        icon: "🏛️",
-        summary: "Décider, voter, adopter des règles ou juger des fautes graves.",
-        className: "decision",
-        themeClass: "theme-decision",
-        items: [
-          {
-            id: "ca",
-            icon: "🏛️",
-            short: "Décision principale",
-            name: "Conseil d’administration",
-            role: "Instance principale de décision du collège ou du lycée.",
-            duties: [
-              "Vote le budget",
-              "Adopte le règlement intérieur",
-              "Adopte le projet d’établissement",
-              "Décide des grandes règles d’organisation"
-            ],
-            composition: [
-              "Chef d’établissement",
-              "Chef d’établissement adjoint",
-              "Gestionnaire",
-              "CPE",
-              "Représentants des collectivités territoriales",
-              "Représentants de la commune",
-              "Personnalité(s) qualifiée(s)",
-              "Représentants des personnels",
-              "Représentants des parents d’élèves",
-              "Représentants des élèves"
-            ],
-            memo: "À retenir : le CA, c’est l’instance qui décide officiellement.",
-            quiz: "Que vote et qu’adopte le CA ?"
-          },
-          {
-            id: "discipline",
-            icon: "⚖️",
-            short: "Sanction des fautes graves",
-            name: "Conseil de discipline",
-            role: "Juge les fautes graves des élèves.",
-            duties: [
-              "Examine les faits",
-              "Entend l’élève",
-              "Vote une sanction pouvant aller jusqu’à l’exclusion définitive"
-            ],
-            composition: [
-              "Chef d’établissement",
-              "Adjoint",
-              "Gestionnaire",
-              "Un CPE",
-              "Représentants des personnels",
-              "Représentants des parents",
-              "Représentants des élèves"
-            ],
-            memo: "À retenir : le conseil de discipline intervient quand la faute est grave.",
-            quiz: "Jusqu’où peut aller la sanction ?"
-          }
-        ]
-      },
-      pedagogie: {
-        title: "Pédagogie",
-        icon: "🌿",
-        summary: "Réfléchir à l’enseignement, au suivi et à l’accompagnement.",
-        className: "pedagogie",
-        themeClass: "theme-pedagogie",
-        items: [
-          {
-            id: "pedago",
-            icon: "📘",
-            short: "Réflexion pédagogique",
-            name: "Conseil pédagogique",
-            role: "Grande instance de réflexion pédagogique.",
-            duties: [
-              "Donne des avis sur l’organisation des enseignements",
-              "Travaille sur le suivi et l’évaluation des élèves",
-              "Prépare la partie pédagogique du projet d’établissement",
-              "Propose des dispositifs d’accompagnement"
-            ],
-            composition: [
-              "Chef d’établissement",
-              "Professeurs principaux",
-              "Au moins un professeur par discipline ou champ disciplinaire",
-              "CPE",
-              "DDFPT / chef de travaux (surtout en lycée pro/techno)"
-            ],
-            memo: "À retenir : ici, on ne sanctionne pas, on réfléchit à la pédagogie.",
-            quiz: "Sur quoi le conseil pédagogique donne-t-il des avis ?"
-          }
-        ]
-      },
-      vie: {
-        title: "Vie scolaire & accompagnement",
-        icon: "🍑",
-        summary: "Aider l’élève, prévenir, et représenter la parole des lycéens ou collégiens.",
-        className: "vie",
-        themeClass: "theme-vie",
-        items: [
-          {
-            id: "educative",
-            icon: "🤝",
-            short: "Aider avant sanction lourde",
-            name: "Commission éducative",
-            role: "Trouver une solution éducative aux difficultés d’un élève sur le plan comportemental ou scolaire.",
-            duties: [
-              "Proposer des mesures d’aide",
-              "Faire de la prévention",
-              "Chercher des mesures de responsabilisation avant une sanction plus lourde"
-            ],
-            composition: [
-              "Chef d’établissement ou son représentant",
-              "Des personnels de l’établissement",
-              "Au moins un professeur",
-              "Au moins un parent d’élève",
-              "D’autres personnes peuvent être invitées selon la situation"
-            ],
-            memo: "À retenir : on cherche d’abord une réponse éducative avant une sanction plus lourde.",
-            quiz: "Quel est son but avant une sanction plus lourde ?"
-          },
-          {
-            id: "cvlcvc",
-            icon: "🗣️",
-            short: "Voix des élèves",
-            name: "Conseil de vie lycéenne / collégienne (CVL / CVC)",
-            role: "Représente les lycéens ou collégiens sur les questions de vie scolaire.",
-            duties: [
-              "Faire des propositions sur le règlement intérieur",
-              "Donner un avis sur l’organisation du temps scolaire",
-              "Aborder l’orientation, la restauration et l’internat",
-              "Traiter la santé, la sécurité, et les activités culturelles et sportives"
-            ],
-            composition: [
-              "Lycée : 10 lycéens élus, 5 enseignants ou personnels d’éducation, 3 personnels administratifs/sociaux/de santé, 2 parents d’élèves, chef d’établissement président, vice-président élève",
-              "Collège : chef d’établissement, représentants des élèves, représentants des personnels, au moins un enseignant, au moins un parent"
-            ],
-            memo: "À retenir : le CVL/CVC sert à faire entendre la parole des élèves.",
-            quiz: "Sur quels sujets le CVL/CVC peut-il donner un avis ?"
-          }
-        ]
-      },
-      sante: {
-        title: "Santé & sécurité",
-        icon: "🌸",
-        summary: "Prévenir, protéger, éduquer à la citoyenneté et améliorer la sécurité.",
-        className: "sante",
-        themeClass: "theme-sante",
-        items: [
-          {
-            id: "cesce",
-            icon: "🌍",
-            short: "Prévention & citoyenneté",
-            name: "Comité d’éducation à la santé, à la citoyenneté et à l’environnement (CESCE)",
-            role: "Pilote les actions éducatives liées à la santé, la citoyenneté et l’environnement.",
-            duties: [
-              "Proposer des actions de prévention",
-              "Coordonner et évaluer ces actions",
-              "Travailler sur la citoyenneté et le développement durable",
-              "Traiter la santé, l’égalité, la prévention des violences et du harcèlement"
-            ],
-            composition: [
-              "Chef d’établissement",
-              "Adjoint",
-              "Gestionnaire",
-              "CPE",
-              "Infirmier(ère)",
-              "Assistant(e) social(e)",
-              "Enseignants",
-              "Autres personnels de l’établissement",
-              "Représentants des élèves",
-              "Représentants des parents",
-              "Représentant de la collectivité territoriale",
-              "Personnalité(s) qualifiée(s) / partenaires extérieurs"
-            ],
-            memo: "À retenir : le CESCE pilote la prévention et l’éducation à la citoyenneté, à la santé et à l’environnement.",
-            quiz: "Quels grands domaines le CESCE pilote-t-il ?"
-          },
-          {
-            id: "chs",
-            icon: "🦺",
-            short: "Hygiène et sécurité",
-            name: "Commission hygiène et sécurité (CHS)",
-            role: "Veille aux conditions d’hygiène et de sécurité dans l’établissement.",
-            duties: [
-              "Faire des propositions au CA pour améliorer la sécurité",
-              "Développer la prévention des risques",
-              "Renforcer la formation à la sécurité",
-              "Existe surtout dans les lycées techniques et professionnels"
-            ],
-            composition: [
-              "Chef d’établissement",
-              "Gestionnaire",
-              "CPE",
-              "DDFPT / chef de travaux",
-              "Représentant de la collectivité",
-              "Représentants des personnels",
-              "Peuvent aussi participer : 2 parents, 2 élèves, adjoint, médecin scolaire, infirmier(ère)"
-            ],
-            memo: "À retenir : la CHS est centrée sur l’hygiène, la sécurité et la prévention des risques.",
-            quiz: "À qui la CHS fait-elle des propositions ?"
-          }
-        ]
-      }
-    };
+    const institutions = document.querySelectorAll(".institution");
 
-    const schemaGrid = document.getElementById("schemaGrid");
-    const detailContainer = document.getElementById("detailContainer");
-    const searchInput = document.getElementById("searchInput");
-    const resetBtn = document.getElementById("resetBtn");
-
-    let currentSelection = null;
-
-    function normalize(text) {
-      return text
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function renderSchema(filter = "") {
-      schemaGrid.innerHTML = "";
-      const query = normalize(filter);
-
-      Object.entries(DATA).forEach(([key, group], groupIndex) => {
-        const visibleItems = group.items.filter(item => {
-          const haystack = normalize(
-            group.title + " " +
-            item.name + " " +
-            item.short + " " +
-            item.role + " " +
-            item.duties.join(" ") + " " +
-            item.composition.join(" ")
-          );
-          return query === "" || haystack.includes(query);
-        });
-
-        if (visibleItems.length === 0) return;
-
-        const groupEl = document.createElement("div");
-        groupEl.className = `group ${group.className}`;
-        groupEl.innerHTML = `
-          <div class="group-header">
-            <div class="group-icon">${group.icon}</div>
-            <div>
-              <h3>${group.title}</h3>
-              <small>${group.summary}</small>
-            </div>
-          </div>
-          <div class="node-list">
-            ${visibleItems.map(item => `
-              <button class="node-btn ${currentSelection === item.id ? "active" : ""}" data-group="${key}" data-id="${item.id}">
-                <div class="node-top">
-                  <span class="node-title">${item.name}</span>
-                  <span class="node-icon">${item.icon}</span>
-                </div>
-                <div class="node-sub">${item.short}</div>
-              </button>
-            `).join("")}
-          </div>
-        `;
-        schemaGrid.appendChild(groupEl);
-      });
-
-      document.querySelectorAll(".node-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const groupKey = btn.dataset.group;
-          const itemId = btn.dataset.id;
-          selectItem(groupKey, itemId);
-        });
+    function closeAll() {
+      institutions.forEach(inst => inst.classList.remove("active"));
+      document.querySelectorAll(".quiz-answer").forEach(answer => {
+        answer.classList.remove("show");
       });
     }
 
-    function selectItem(groupKey, itemId) {
-      const group = DATA[groupKey];
-      const item = group.items.find(x => x.id === itemId);
-      if (!item) return;
+    institutions.forEach(inst => {
+      const btn = inst.querySelector(".inst-btn");
+      const quizBtn = inst.querySelector(".quiz-btn");
+      const quizAnswer = inst.querySelector(".quiz-answer");
 
-      currentSelection = itemId;
-      renderSchema(searchInput.value);
+      btn.addEventListener("click", () => {
+        const isOpen = inst.classList.contains("active");
+        closeAll();
 
-      detailContainer.innerHTML = `
-        <div class="detail-card ${group.themeClass}">
-          <div class="path">
-            <span class="path-badge">🏫 Établissement</span>
-            <span>→</span>
-            <span class="path-badge">${group.title}</span>
-            <span>→</span>
-            <span class="path-badge">${item.name}</span>
-          </div>
+        if (!isOpen) {
+          inst.classList.add("active");
+          setTimeout(() => {
+            inst.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 120);
+        }
+      });
 
-          <div class="detail-title">
-            <div class="big-icon">${item.icon}</div>
-            <div>
-              <h4>${item.name}</h4>
-              <p>${item.short}</p>
-            </div>
-          </div>
-
-          <div class="mini-schema">
-            <div class="mini-box">
-              <strong>1. Rôle</strong>
-              <span>À quoi sert cette instance ?</span>
-            </div>
-            <div class="mini-box">
-              <strong>2. Devoirs</strong>
-              <span>Qu’est-ce qu’elle fait concrètement ?</span>
-            </div>
-            <div class="mini-box">
-              <strong>3. Composition</strong>
-              <span>Qui participe à cette instance ?</span>
-            </div>
-          </div>
-
-          <div class="content-block">
-            <h5>Rôle</h5>
-            <p>${item.role}</p>
-          </div>
-
-          <div class="content-block">
-            <h5>Devoirs</h5>
-            <ul>
-              ${item.duties.map(d => `<li>${d}</li>`).join("")}
-            </ul>
-          </div>
-        </div>
-
-        <div class="detail-side">
-          <div class="memory-card">
-            <strong>Repère logique</strong>
-            <p>${item.memo}</p>
-          </div>
-
-          <div class="content-block">
-            <h5>Composition</h5>
-            <ul>
-              ${item.composition.map(c => `<li>${c}</li>`).join("")}
-            </ul>
-          </div>
-
-          <button class="quiz-button" id="quizBtn" type="button">Afficher la question flash</button>
-          <div class="quiz-answer" id="quizAnswer">${item.quiz}</div>
-        </div>
-      `;
-
-      const quizBtn = document.getElementById("quizBtn");
-      const quizAnswer = document.getElementById("quizAnswer");
-      quizBtn.addEventListener("click", () => {
+      quizBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
         quizAnswer.classList.toggle("show");
       });
-    }
-
-    searchInput.addEventListener("input", () => {
-      renderSchema(searchInput.value);
-
-      if (currentSelection) {
-        const allItems = Object.entries(DATA).flatMap(([groupKey, group]) =>
-          group.items.map(item => ({ groupKey, item }))
-        );
-
-        const selectedStillVisible = allItems.some(({ groupKey, item }) => {
-          if (item.id !== currentSelection) return false;
-          const haystack = normalize(
-            DATA[groupKey].title + " " +
-            item.name + " " +
-            item.short + " " +
-            item.role + " " +
-            item.duties.join(" ") + " " +
-            item.composition.join(" ")
-          );
-          return normalize(searchInput.value) === "" || haystack.includes(normalize(searchInput.value));
-        });
-
-        if (!selectedStillVisible) {
-          currentSelection = null;
-          detailContainer.innerHTML = `
-            <div class="detail-placeholder">
-              Aucun résultat affiché pour cette recherche. Essaie un autre mot-clé.
-            </div>
-          `;
-        }
-      }
     });
 
-    resetBtn.addEventListener("click", () => {
-      searchInput.value = "";
-      currentSelection = null;
-      renderSchema("");
-      detailContainer.innerHTML = `
-        <div class="detail-placeholder">
-          Clique sur une instance dans le schéma pour afficher sa fiche détaillée ici.
-        </div>
-      `;
+    document.querySelectorAll('.cat-link').forEach(link => {
+      link.addEventListener('click', () => {
+        closeAll();
+      });
     });
-
-    renderSchema("");
   </script>
 </body>
 </html>
