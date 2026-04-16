@@ -107,6 +107,13 @@
       font-weight: 700;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
     h1 {
       margin: 0 0 8px;
       font-size: clamp(2rem, 4.8vw, 3.2rem);
@@ -164,6 +171,13 @@
 
     .btn:hover {
       transform: translateY(-1px);
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
     .map-title {
@@ -641,6 +655,8 @@
     .inst-cvl .inst-badge, .inst-cvl .memory { background: linear-gradient(180deg, var(--sante-2), rgba(255, 255, 255, 0.96)); }
     .inst-cesce .inst-badge, .inst-cesce .memory { background: linear-gradient(180deg, #efd8ff, rgba(255, 255, 255, 0.96)); }
     .inst-chs .inst-badge, .inst-chs .memory { background: linear-gradient(180deg, var(--neutral-2), rgba(255, 255, 255, 0.96)); }
+    .inst-phare .inst-badge, .inst-phare .memory { background: linear-gradient(180deg, #ffe4c7, rgba(255, 255, 255, 0.96)); }
+    .inst-evars .inst-badge, .inst-evars .memory { background: linear-gradient(180deg, #d9f4ff, rgba(255, 255, 255, 0.96)); }
 
     .footer {
       margin-top: 16px;
@@ -706,6 +722,10 @@
       .inst-right {
         text-align: left;
       }
+
+      .hero-actions .btn-link {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -716,6 +736,7 @@
         <span class="hero-pill">🎤 Oral 3</span>
         <span class="hero-pill">🧭 Version schéma</span>
         <span class="hero-pill">✨ Plus interactif</span>
+        <span class="hero-pill">🛡️ pHARe + EVARS</span>
       </div>
 
       <h1>Schéma des instances</h1>
@@ -723,6 +744,17 @@
         Clique sur une branche du schéma, puis sur une institution.
         Les détails s’ouvrent directement en dessous pour te permettre de comprendre la logique d’un seul regard.
       </p>
+
+      <div class="hero-actions">
+        <a
+          class="btn btn-link"
+          href="https://justiaas.github.io/Fiches-capeps/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir mon autre fiche
+        </a>
+      </div>
     </section>
 
     <section class="panel">
@@ -791,6 +823,8 @@
           </a>
           <div class="institution-mini-list">
             <a href="#cesce" class="mini-link">CESCE</a>
+            <a href="#phare" class="mini-link">Programme pHARe</a>
+            <a href="#evars" class="mini-link">EVARS</a>
             <a href="#chs" class="mini-link">CHS</a>
           </div>
         </div>
@@ -1222,6 +1256,148 @@
 
               <button class="quiz-btn" type="button">Afficher la question flash</button>
               <div class="quiz-answer">Quels grands domaines le CESCE pilote-t-il ?</div>
+            </div>
+          </div>
+        </article>
+
+        <article id="phare" class="institution inst-phare">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">🛡️</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">pHARe</span>
+                <h3 class="inst-title">Programme pHARe</h3>
+                <p class="inst-sub">Prévenir et traiter les situations de harcèlement dans l’établissement.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Harcèlement
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step"><strong>Rôle</strong><span>Prévenir et traiter le harcèlement.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Sensibiliser, repérer, intervenir, suivre.</span></div>
+                <div class="mini-step"><strong>Appui</strong><span>Direction, équipe ressource, élèves ambassadeurs.</span></div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Le programme pHARe structure la prévention du harcèlement et le traitement des situations signalées dans l’établissement.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Éduquer pour prévenir les phénomènes de harcèlement</li>
+                  <li>Former une communauté protectrice autour des élèves</li>
+                  <li>Intervenir efficacement lorsqu’une situation est repérée</li>
+                  <li>Associer les parents et les partenaires</li>
+                  <li>Mobiliser les élèves et les instances comme le CVC/CVL et le CESCE</li>
+                </ul>
+              </div>
+
+              <div class="block">
+                <h4>Procédure phare</h4>
+                <p>Repérage ou signalement → analyse de la situation → mise en sécurité et recueil de la parole → traitement par l’équipe ressource / la direction → suivi jusqu’à la résolution.</p>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                pHARe = prévenir, repérer, traiter, suivre.
+              </div>
+
+              <div class="block">
+                <h4>Qui agit ?</h4>
+                <ul>
+                  <li>Chef d’établissement</li>
+                  <li>CPE et personnels éducatifs</li>
+                  <li>Équipe ressource pHARe / adultes ressources</li>
+                  <li>Élèves ambassadeurs</li>
+                  <li>Parents et partenaires selon les besoins</li>
+                </ul>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Quels sont les 2 grands objectifs de pHARe ? Prévenir le harcèlement et traiter les situations signalées.</div>
+            </div>
+          </div>
+        </article>
+
+        <article id="evars" class="institution inst-evars">
+          <button class="inst-btn" type="button">
+            <div class="inst-left">
+              <div class="inst-badge">💬</div>
+              <div class="inst-title-wrap">
+                <span class="inst-kicker">EVARS</span>
+                <h3 class="inst-title">Éducation à la vie affective, relationnelle et à la sexualité</h3>
+                <p class="inst-sub">Programme éducatif mené au collège et au lycée autour du respect, de l’égalité et de la prévention.</p>
+              </div>
+            </div>
+            <div class="inst-right">
+              Respect & prévention
+              <div class="chevron">⌄</div>
+            </div>
+          </button>
+
+          <div class="inst-content">
+            <div class="info-box">
+              <div class="mini-logic">
+                <div class="mini-step"><strong>Rôle</strong><span>Former et protéger les élèves.</span></div>
+                <div class="mini-step"><strong>Devoirs</strong><span>Informer, prévenir, faire réfléchir.</span></div>
+                <div class="mini-step"><strong>Mise en œuvre</strong><span>Communauté éducative et personnels ressource.</span></div>
+              </div>
+
+              <div class="block">
+                <h4>Rôle</h4>
+                <p>Mettre en place une éducation progressive sur la vie affective, relationnelle et la sexualité, adaptée à l’âge des élèves.</p>
+              </div>
+
+              <div class="block">
+                <h4>Devoirs</h4>
+                <ul>
+                  <li>Aborder le respect, le consentement et l’égalité</li>
+                  <li>Prévenir les violences sexistes et sexuelles, les discriminations et certaines conduites à risque</li>
+                  <li>Aider les élèves à construire des relations respectueuses</li>
+                  <li>Inscrire les séances dans le parcours de l’élève</li>
+                </ul>
+              </div>
+
+              <div class="block">
+                <h4>Repère oral</h4>
+                <p>Tu peux relier l’EVARS au CESCE, à l’infirmier(ère), au CPE, aux enseignants et aux partenaires agréés : c’est une action éducative transversale, pas une instance de sanction.</p>
+              </div>
+            </div>
+
+            <div class="side-box">
+              <div class="memory">
+                <strong>À retenir</strong>
+                EVARS = éduquer, prévenir, protéger et faire grandir dans le respect.
+              </div>
+
+              <div class="block">
+                <h4>Qui participe ?</h4>
+                <ul>
+                  <li>Chef d’établissement / adjoint</li>
+                  <li>Enseignants</li>
+                  <li>CPE</li>
+                  <li>Infirmier(ère), assistant(e) social(e), médecin scolaire selon les besoins</li>
+                  <li>Partenaires agréés ou spécialisés si nécessaire</li>
+                </ul>
+              </div>
+
+              <div class="block">
+                <h4>Point clé à citer</h4>
+                <p>Au collège et au lycée, l’EVARS s’inscrit dans un programme national et s’organise dans la durée, avec au moins trois séances annuelles.</p>
+              </div>
+
+              <button class="quiz-btn" type="button">Afficher la question flash</button>
+              <div class="quiz-answer">Pourquoi l’EVARS n’est-elle pas une sanction ? Parce que c’est une action éducative de prévention, de formation et de protection des élèves.</div>
             </div>
           </div>
         </article>
